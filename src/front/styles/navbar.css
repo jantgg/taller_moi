@@ -1,0 +1,49 @@
+.mynav {
+  position: fixed;
+  top: 0;
+  z-index: 99;
+  font-size: 1vw;
+  transition: padding 0.5s ease, background-color 0.5s ease;
+}
+
+.border-all-r {
+  border: 2px solid red;
+}
+.border-left-r {
+  border-left: 2px solid red;
+}
+.w100 {
+  width: 100% !important;
+}
+.shadowed {
+  box-shadow: 0 7px 15px rgba(0, 0, 0, 0.2); /* Cambia los valores según tus preferencias */
+}
+
+.line {
+  position: relative;
+}
+
+.line:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: 0px;
+  left: 0px;
+  transform: scaleX(0);
+  background: #ff1b1b;
+  transform-origin: bottom right;
+  transition: transform 0.5s ease-out;
+}
+
+.line:hover:after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+.logo {
+  transition: transform 0.5s ease-out;
+  font-size: 1.2vw;
+}
+.logo:hover {
+  transform: scale(1.1);
+}
