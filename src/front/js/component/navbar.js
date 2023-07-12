@@ -60,7 +60,7 @@ export const Navbar = () => {
     <div className=" ">
       <nav
         className={`navbar mynav navbar-expand-lg mx-auto navbar-scrolled col-12  ${
-          isInView ? " bg-dark py-5" : " bg-white shadowed py-3 "
+          isInView ? " bg-gradient-1 py-5" : " bg-white shadowed py-3 "
         }`}
       >
         <div className="container-fluid  col-11 ">
@@ -69,7 +69,7 @@ export const Navbar = () => {
             className={`${
               isDesktop ? " ms-5" : " ms-2"
             } navbar-brand px-2 mx-auto logo me-5 ${selected === 3 && ""} ${
-              isInView ? " text-white" : "  text-black"
+              isInView ? " text-white hided" : "  text-black"
             }`}
             onClick={() => setSelected(3)}
           >

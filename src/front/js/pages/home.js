@@ -1,125 +1,88 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState, useRef } from "react";
 import { Context } from "../store/appContext";
 import rigoImageUrl from "../../img/rigo-baby.jpg";
+import taller from "../../img/taller.jpg";
 import "../../styles/home.css";
+import gsap from "gsap";
+import ScrollTrigger from "gsap/ScrollTrigger";
 
 export const Home = () => {
   const { store, actions } = useContext(Context);
+  const [isInViewH, setIsInViewH] = useState(false);
+  const isDesktop = window.innerWidth >= 1000;
+  const startRef = useRef(null);
+
+  const scrollToStart = () => {
+    if (startRef.current) {
+      startRef.current.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
+  useEffect(() => {
+    gsap.registerPlugin(ScrollTrigger);
+    gsap.utils.toArray(".navbar-scrolled").forEach(function (elem) {
+      ScrollTrigger.create({
+        trigger: elem,
+        start: "top 100%",
+        end: "bottom 0%",
+        onEnter: () => {
+          setIsInViewH(true); // Establecer el estado en true cuando se cumple la condición
+        },
+        onLeave: () => {
+          setIsInViewH(false); // Establecer el estado en false cuando no se cumple la condición
+        },
+        onEnterBack: () => {
+          setIsInViewH(true);
+        },
+        onLeaveBack: () => {
+          setIsInViewH(false);
+        },
+      });
+    });
+  }, []);
+
+  const stylesImgTaller = {
+    backgroundImage: `url(${taller})`,
+    backgroundSize: "cover",
+    backgroundPosition: "center center",
+  };
 
   return (
-    <div className="text-center mt-5">
-      <h1>Hello Rigo!!</h1>
-      <p>
-        <img src={rigoImageUrl} />
-      </p>
-      <div className="alert alert-info">
-        {store.message ||
-          "Loading message from the backend (make sure your python backend is running)..."}
+    <div className="text-center d-flex flex-column">
+      <div
+        className="landing-img d-flex col-12 flex-column"
+        style={stylesImgTaller}
+      >
+        <div className="col-3 text-white mx-auto my-auto center-text">
+          {" "}
+          <div
+            className={`main-logo ${
+              isInViewH ? " text-white" : "hided text-black"
+            }`}
+          >
+            <div className="d-flex border-all-r w100 bg-black">
+              <div className="col-2 center-text my-auto engranje py-1">
+                {" "}
+                <i class="fa-solid fa-gear"></i>
+              </div>
+              <div className="col-10 border-left-r px-2 center-text py-1">
+                {" "}
+                GARAGE LLAVE 13
+              </div>
+            </div>
+          </div>
+          <a class="container-arrow" onClick={scrollToStart}>
+            <span>
+              <i class="fa-solid fa-angles-down" aria-hidden="true"></i>{" "}
+            </span>
+          </a>
+        </div>
       </div>
-      <p>
-        This boilerplate comes with lots of documentation:{" "}
-        <a href="https://start.4geeksacademy.com/starters/react-flask">
-          Read documentation
-        </a>
-      </p>
-      <h1>Hello Rigo!!</h1>
-      <p>
-        <img src={rigoImageUrl} />
-      </p>
-      <div className="alert alert-info">
-        {store.message ||
-          "Loading message from the backend (make sure your python backend is running)..."}
-      </div>
-      <p>
-        This boilerplate comes with lots of documentation:{" "}
-        <a href="https://start.4geeksacademy.com/starters/react-flask">
-          Read documentation
-        </a>
-      </p>
-      <h1>Hello Rigo!!</h1>
-      <p>
-        <img src={rigoImageUrl} />
-      </p>
-      <div className="alert alert-info">
-        {store.message ||
-          "Loading message from the backend (make sure your python backend is running)..."}
-      </div>
-      <p>
-        This boilerplate comes with lots of documentation:{" "}
-        <a href="https://start.4geeksacademy.com/starters/react-flask">
-          Read documentation
-        </a>
-      </p>
-      <h1>Hello Rigo!!</h1>
-      <p>
-        <img src={rigoImageUrl} />
-      </p>
-      <div className="alert alert-info">
-        {store.message ||
-          "Loading message from the backend (make sure your python backend is running)..."}
-      </div>
-      <p>
-        This boilerplate comes with lots of documentation:{" "}
-        <a href="https://start.4geeksacademy.com/starters/react-flask">
-          Read documentation
-        </a>
-      </p>
-      <h1>Hello Rigo!!</h1>
-      <p>
-        <img src={rigoImageUrl} />
-      </p>
-      <div className="alert alert-info">
-        {store.message ||
-          "Loading message from the backend (make sure your python backend is running)..."}
-      </div>
-      <p>
-        This boilerplate comes with lots of documentation:{" "}
-        <a href="https://start.4geeksacademy.com/starters/react-flask">
-          Read documentation
-        </a>
-      </p>
-      <h1>Hello Rigo!!</h1>
-      <p>
-        <img src={rigoImageUrl} />
-      </p>
-      <div className="alert alert-info">
-        {store.message ||
-          "Loading message from the backend (make sure your python backend is running)..."}
-      </div>
-      <p>
-        This boilerplate comes with lots of documentation:{" "}
-        <a href="https://start.4geeksacademy.com/starters/react-flask">
-          Read documentation
-        </a>
-      </p>
-      <h1>Hello Rigo!!</h1>
-      <p>
-        <img src={rigoImageUrl} />
-      </p>
-      <div className="alert alert-info">
-        {store.message ||
-          "Loading message from the backend (make sure your python backend is running)..."}
-      </div>
-      <p>
-        This boilerplate comes with lots of documentation:{" "}
-        <a href="https://start.4geeksacademy.com/starters/react-flask">
-          Read documentation
-        </a>
-      </p>
-      <h1>Hello Rigo!!</h1>
-      <p>
-        <img src={rigoImageUrl} />
-      </p>
-      <div className="alert alert-info">
-        {store.message ||
-          "Loading message from the backend (make sure your python backend is running)..."}
-      </div>
-      <p>
-        This boilerplate comes with lots of documentation:{" "}
-        <a href="https://start.4geeksacademy.com/starters/react-flask">
-          Read documentation
-        </a>
-      </p>
+      <div
+        id="start"
+        ref={startRef}
+        className="d-flex col-12 flex-column section-1"
+      ></div>
     </div>
   );
 };

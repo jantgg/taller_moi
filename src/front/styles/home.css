@@ -4,3 +4,78 @@ body {
 .center-text {
   text-align: center;
 }
+.landing-img {
+  height: 100vh;
+  width: 100%;
+  filter: grayscale(0.3);
+}
+.absolute-center {
+  margin-top: 10vh;
+  position: absolute;
+  z-index: 9;
+  top: 40%;
+  left: 45%;
+}
+.main-logo-width {
+  width: 9vw;
+}
+.engranje {
+  font-size: 2vw !important;
+}
+.main-logo {
+  margin-top: 30vh;
+  font-size: 2.3vw;
+  transform: scale(1.5);
+}
+.parent {
+  display: inline-block;
+}
+.s15 {
+  transform: scale(2);
+}
+.container-arrow {
+  margin-top: 20vh;
+  text-transform: uppercase;
+  color: #c01a16;
+  display: inline-block;
+  text-align: center;
+  position: relative;
+  bottom: 0;
+  left: 0;
+  z-index: 10;
+  width: 100%;
+  cursor: pointer;
+  font-size: 12px;
+}
+.container-arrow:hover {
+  color: #c01a16;
+}
+
+/* Arrow Bouncing */
+.container-arrow span {
+  display: inline-block;
+  font-size: 5vw;
+  animation: 0.7s down infinite alternate;
+  -webkit-animation: 0.7s down infinite alternate;
+}
+/***Animation Arrow down***/
+@keyframes down {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(20px);
+  }
+}
+@-webkit-keyframes down {
+  0% {
+    -webkit-transform: translateY(0px);
+  }
+  100% {
+    -webkit-transform: translateY(20px);
+  }
+}
+
+.hided {
+  display: none;
+}
