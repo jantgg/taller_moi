@@ -2,6 +2,7 @@ import React, { useState, useContext, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "../../styles/home.css";
 import "../../styles/navbar.css";
+import logo from "../../img/logorojo.png";
 import { Context } from "../store/appContext";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
@@ -60,30 +61,20 @@ export const Navbar = () => {
     <div className=" ">
       <nav
         className={`navbar mynav navbar-expand-lg mx-auto navbar-scrolled col-12  ${
-          isInView ? " bg-gradient-1 py-5" : " bg-white shadowed py-3 "
+          isInView ? " bg-gradient-1 py-5" : " bg-white-gradient shadowed "
         }`}
       >
         <div className="container-fluid  col-11 ">
           <Link
             to="/"
-            className={`${
+            className={`container-logo-navbar mx-auto${
               isDesktop ? " ms-5" : " ms-2"
-            } navbar-brand px-2 mx-auto logo me-5 ${selected === 3 && ""} ${
-              isInView ? " text-white hided" : "  text-black"
-            }`}
+            } ${isInView ? " hided" : ""}`}
             onClick={() => setSelected(3)}
           >
-            <div className="d-flex border-all-r w100">
-              <div className="col-2 center-text  py-1">
-                {" "}
-                <i class="fa-solid fa-gear"></i>
-              </div>
-              <div className="col-10 border-left-r px-3 pe-5 center-text py-1">
-                {" "}
-                GARAGE LLAVE 13
-              </div>
-            </div>
+            <img src={logo} style={{ width: "10vw", height: "7vh" }} />
           </Link>
+          <div></div>
           <button
             className="navbar-toggler"
             type="button"
@@ -96,7 +87,7 @@ export const Navbar = () => {
             <span className="navbar-toggler-icon"></span>
           </button>
           <div className=" collapse navbar-collapse" id="navbarNavDropdown">
-            <ul className="navbar-nav ms-auto">
+            <ul className={`navbar-nav ms-auto ${isInView ? " " : " "}`}>
               <div className="nav-item ">
                 <Link
                   to="/test"

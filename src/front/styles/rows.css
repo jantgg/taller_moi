@@ -1,0 +1,67 @@
+.row-1 {
+  flex: 0 0 auto;
+  height: 8.3333333333%;
+}
+
+.row-2 {
+  flex: 0 0 auto;
+  height: 16.6666666667%;
+}
+
+.row-3 {
+  flex: 0 0 auto;
+  height: 25%;
+}
+
+.row-4 {
+  flex: 0 0 auto;
+  height: 33.3333333333%;
+}
+
+.row-5 {
+  flex: 0 0 auto;
+  height: 41.6666666667%;
+}
+
+.row-6 {
+  flex: 0 0 auto;
+  height: 50%;
+}
+
+.row-7 {
+  flex: 0 0 auto;
+  height: 58.3333333333%;
+}
+
+.row-8 {
+  flex: 0 0 auto;
+  height: 66.6666666667%;
+}
+
+.row-9 {
+  flex: 0 0 auto;
+  height: 75%;
+}
+
+.row-10 {
+  flex: 0 0 auto;
+  height: 83.3333333333%;
+}
+
+.row-11 {
+  flex: 0 0 auto;
+  height: 91.6666666667%;
+}
+
+.row-12 {
+  flex: 0 0 auto;
+  height: 100%;
+}
+.col-1-5 {
+  flex: 0 0 auto;
+  width: 12.49999999995%;
+}
+.col-2-5 {
+  flex: 0 0 auto;
+  width: 20.833333335%;
+}
