@@ -82,3 +82,84 @@ body {
 .hided {
   opacity: 0;
 }
+/* 
+.special-border {
+  border: 5px solid #0000;
+  background: linear-gradient(rgb(255, 255, 255) 0 0) padding-box,
+    repeating-conic-gradient(rgb(255, 0, 0) 0 25%, #0000 0 50%) border-box;
+} */
+
+#fancy-borders {
+  position: relative;
+  background-color: rgb(255, 255, 255);
+  margin: 10px auto;
+  /* not required for the effect to work */
+}
+
+#fancy-borders:before,
+#fancy-borders:after {
+  content: "";
+  position: absolute;
+  /** very important */
+  width: 8%;
+  /* change this per your requirement */
+  height: 20%;
+  /* change this per your requirement */
+  background-color: rgb(199, 0, 0);
+  /* change this per your requirement */
+  z-index: -1;
+  /* place the pseudo elements behind the actual DIV */
+}
+
+/* pseudo-elements positionning */
+
+#fancy-borders:before {
+  bottom: -5px;
+  /* change this per your requirement */
+  right: -5px;
+  /* change this per your requirement */
+}
+
+#fancy-borders:after {
+  top: -5px;
+  /* change this per your requirement */
+  left: -5px;
+  /* change this per your requirement */
+}
+
+.comment {
+  font-style: italic;
+  color: #888;
+  text-align: right;
+  font-size: 0.8vw;
+}
+.who-h1 {
+  font-size: 2.9vw;
+  color: rgb(199, 0, 0);
+  text-align: left;
+}
+.who-h2 {
+  padding-left: 2vw;
+  font-size: 1.9vw;
+  color: rgb(65, 65, 65);
+  text-align: left;
+}
+.text-my-red {
+  color: rgb(199, 0, 0);
+}
+.who-p {
+  font-size: 1.05vw;
+  text-align: justify;
+}
+.justify-text {
+  text-align: justify;
+}
+.margin-top-section1 {
+  margin-top: 12vh;
+}
+.border-red-r {
+  border-right: 3px solid rgb(197, 0, 0);
+}
+.border-red-r-2 {
+  border-right: 2px solid rgb(197, 0, 0);
+}
