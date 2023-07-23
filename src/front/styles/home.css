@@ -7,7 +7,6 @@ body {
 .landing-img {
   height: 100vh;
   width: 100%;
-  filter: grayscale(0.3);
 }
 .absolute-center {
   margin-top: 10vh;
@@ -39,7 +38,7 @@ body {
 .container-arrow {
   margin-top: 20vh;
   text-transform: uppercase;
-  color: #da0400;
+  color: #22ac00;
   display: inline-block;
   text-align: center;
   position: relative;
@@ -51,7 +50,7 @@ body {
   font-size: 12px;
 }
 .container-arrow:hover {
-  color: #da0400;
+  color: #22ac00;
 }
 
 /* Arrow Bouncing */
@@ -92,7 +91,6 @@ body {
 #fancy-borders {
   position: relative;
   background-color: rgb(255, 255, 255);
-  margin: 10px auto;
   /* not required for the effect to work */
 }
 
@@ -105,7 +103,7 @@ body {
   /* change this per your requirement */
   height: 20%;
   /* change this per your requirement */
-  background-color: rgb(199, 0, 0);
+  background-color: #22ac00;
   /* change this per your requirement */
   z-index: -1;
   /* place the pseudo elements behind the actual DIV */
@@ -135,7 +133,7 @@ body {
 }
 .who-h1 {
   font-size: 2.9vw;
-  color: rgb(199, 0, 0);
+  color: #22ac00;
   text-align: left;
 }
 .who-h2 {
@@ -144,22 +142,52 @@ body {
   color: rgb(65, 65, 65);
   text-align: left;
 }
-.text-my-red {
-  color: rgb(199, 0, 0);
-}
 .who-p {
   font-size: 1.05vw;
   text-align: justify;
+}
+.text-my-red {
+  color: #22ac00;
 }
 .justify-text {
   text-align: justify;
 }
 .margin-top-section1 {
-  margin-top: 12vh;
+  padding-top: 20vh;
+}
+.margin-top-section2 {
+  padding-top: 15vh;
 }
 .border-red-r {
-  border-right: 3px solid rgb(197, 0, 0);
+  border-right: 3px solid #22ac00;
 }
 .border-red-r-2 {
-  border-right: 2px solid rgb(197, 0, 0);
+  border-right: 2px solid #22ac00;
+}
+.service-h1 {
+  font-size: 2.4vw;
+  color: #22ac00;
+  text-align: center;
+}
+.service-h2 {
+  padding-left: 2vw;
+  font-size: 1.9vw;
+  color: rgb(65, 65, 65);
+  text-align: center;
+}
+.service-p {
+  font-size: 1.05vw;
+  text-align: justify;
+}
+.border-red-l {
+  border-left: 3px solid #22ac00;
+}
+.border-red-l-2 {
+  border-left: 2px solid #22ac00;
+}
+.border-red-b {
+  border-bottom: 3px solid #22ac00;
+}
+.border-red-b-2 {
+  border-bottom: 5px solid #22ac00;
 }

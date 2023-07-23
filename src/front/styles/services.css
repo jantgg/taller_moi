@@ -1,0 +1,123 @@
+.services-tittle-color {
+  color: #22ac00;
+  text-align: center;
+}
+.services-tittle-size {
+  font-size: 1.3vw;
+}
+.services-content-color {
+  color: #000000;
+  text-align: justify;
+}
+.services-content-size {
+  font-size: 1vw;
+}
+.services-cita-color {
+  color: #22ac00;
+  text-align: center;
+  cursor: pointer;
+}
+.services-cita-size {
+  font-size: 1.6vw;
+}
+.services-img {
+  content: ""; /* Asegura que el contenido del ::before esté presente */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  background-image: url("https://res.cloudinary.com/dsbp8pqdb/image/upload/v1690141036/herramientas_esffic.jpg");
+  background-size: cover;
+  opacity: 1;
+}
+
+.icon-img {
+  top: 0;
+  left: 0;
+  width: 40%;
+  height: 50%;
+
+  margin-left: auto;
+  margin-right: auto;
+  object-fit: contain;
+}
+.altura-tittle {
+  height: 8vh;
+}
+
+#fancy-borders2 {
+  position: relative;
+  background-color: rgb(241, 241, 241);
+  /* not required for the effect to work */
+}
+
+#fancy-borders2:before,
+#fancy-borders2:after {
+  content: "";
+  position: absolute;
+  /** very important */
+  width: 8%;
+  /* change this per your requirement */
+  height: 12%;
+  /* change this per your requirement */
+  background-color: #22ac00;
+  /* change this per your requirement */
+  z-index: -1;
+  /* place the pseudo elements behind the actual DIV */
+}
+
+/* pseudo-elements positionning */
+
+#fancy-borders2:before {
+  bottom: -3px;
+  /* change this per your requirement */
+  right: -3px;
+  /* change this per your requirement */
+}
+
+#fancy-borders2:after {
+  top: -3px;
+  /* change this per your requirement */
+  left: -3px;
+  /* change this per your requirement */
+}
+
+.flip-card {
+  height: 18vh;
+  perspective: 1000px;
+}
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+  background-color: rgb(255, 255, 255);
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+  box-shadow: 0 8px 14px 0 rgb(0, 0, 0);
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  border: 1px solid #22ac00;
+}
+
+.flip-card-front {
+  color: coral;
+}
+
+.flip-card-back {
+  transform: rotateY(180deg);
+}

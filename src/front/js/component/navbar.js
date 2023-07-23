@@ -2,7 +2,7 @@ import React, { useState, useContext, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "../../styles/home.css";
 import "../../styles/navbar.css";
-import logo from "../../img/logorojo.png";
+import logo from "../../img/logoverde2.png";
 import { Context } from "../store/appContext";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
@@ -72,7 +72,7 @@ export const Navbar = () => {
             } ${isInView ? " hided" : ""}`}
             onClick={() => setSelected(3)}
           >
-            <img src={logo} style={{ width: "10vw", height: "7vh" }} />
+            <img src={logo} style={{ width: "8vw", height: "5vh" }} />
           </Link>
           <div></div>
           <button
