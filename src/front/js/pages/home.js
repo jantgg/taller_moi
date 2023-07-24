@@ -1,10 +1,8 @@
 import React, { useContext, useEffect, useState, useRef } from "react";
 import { Context } from "../store/appContext";
-import rigoImageUrl from "../../img/rigo-baby.jpg";
 import taller from "../../img/taller.jpg";
 import logo from "../../img/logoverde2.png";
 import cruzado from "../../img/cruzado.jpg";
-import numerogris from "../../img/13gris.png";
 import herramientas from "../../img/herramientas.jpg";
 import aceite from "../../img/icons/aceite.jpg";
 import bujia from "../../img/icons/bujia.png";
@@ -12,6 +10,11 @@ import cadena from "../../img/icons/cadena.png";
 import freno from "../../img/icons/freno.jpg";
 import escape from "../../img/icons/escape.png";
 import sonido from "../../img/icons/sonido.jpg";
+import fondo from "../../img/fondo-web-4.jpg";
+import { SlLocationPin } from "react-icons/sl";
+import { BsTelephoneOutbound } from "react-icons/bs";
+import { GoMail } from "react-icons/go";
+
 import "../../styles/services.css";
 import "../../styles/home.css";
 import "../../styles/rows.css";
@@ -64,6 +67,13 @@ export const Home = () => {
     backgroundPosition: "center center",
     zIndex: "-2",
   };
+  const backgroundpage = {
+    backgroundImage: `url(${fondo})`,
+    backgroundSize: "cover",
+    backgroundRepeat: "no-repeat",
+    width: "100%",
+    height: "auto",
+  };
 
   return (
     <div className="text-center d-flex flex-column">
@@ -87,9 +97,10 @@ export const Home = () => {
         id="start"
         ref={startRef}
         className="d-flex col-12 flex-column section-1 margin-top-section1"
+        style={backgroundpage}
       >
         <div id="who" className="col-12 d-flex flex-column mb-5">
-          <div id="fancy-borders" className="col-9 mx-auto d-flex p-4">
+          <div className="col-9 mx-auto d-flex p-4">
             <div className="col-5 d-flex flex-column">
               {" "}
               <img src={cruzado} style={{ width: "100%", height: "" }} />
@@ -224,9 +235,8 @@ export const Home = () => {
                       <div class="flip-card-back ">
                         <p className="services-content-color services-content-size px-4 my-b mt-3">
                           {" "}
-                          Identificamos y solucionamos cualquiera problema que
-                          pueda afectar tanto al rendimiento como a la vida útil
-                          de tu moto.
+                          Identificamos cualquier problema que pueda afectar
+                          tanto al rendimiento como a la vida útil de tu moto.
                         </p>
                       </div>
                     </div>
@@ -243,8 +253,8 @@ export const Home = () => {
                         <p className="services-content-color services-content-size px-4 my-b mt-3">
                           {" "}
                           Lubricamos y ajustamos adecuadamente la cadena de tu
-                          moto, prolongando su vida útil y mejorando la
-                          transmisión de potencia.
+                          moto, mejorando su vida útil y transmisión de
+                          potencia.
                         </p>
                       </div>
                     </div>
@@ -286,10 +296,72 @@ export const Home = () => {
                     </div>
                   </div>
                 </div>
-                8
               </div>
             </div>
           </div>
+        </div>
+        <div
+          id="contact"
+          className="col-12 ms-auto d-flex flex-column margin-top-section3 "
+        >
+          <div className="col-12"></div>
+          <div className="row mx-auto">
+            {" "}
+            <div className="col-6 mt-3 py-5 d-flex flex-column my-auto">
+              <div className="d-flex col-12">
+                <h2 className="ms-auto contact-h2 my-auto pe-5">
+                  {" "}
+                  C/ Santa n4, San Pedro Alcántara{" "}
+                </h2>
+                <p className="icons-contact pe-5">
+                  {" "}
+                  <SlLocationPin />
+                </p>
+              </div>
+              <div className="d-flex col-12">
+                <h2 className="ms-auto contact-h2 my-auto pe-5">
+                  {" "}
+                  +34 610 03 47 73
+                </h2>
+                <p className="icons-contact pe-5">
+                  {" "}
+                  <BsTelephoneOutbound />
+                </p>
+              </div>
+              <div className="d-flex col-12">
+                <h2 className="ms-auto contact-h2 mt-4 mb-1 pe-5">
+                  {" "}
+                  moises@garage.com{" "}
+                </h2>
+                <p className="icons-contact pe-5">
+                  {" "}
+                  <GoMail />
+                </p>
+              </div>
+            </div>
+            <div className="col-6 border-red-l flex-column mt-3 pb-5 ps-0">
+              <h1 className="contact-h1 col-12 border-red-l-2 ps-5 mb-0 ">
+                Contacto
+              </h1>{" "}
+              <h2 className="contact-h2 col-8 me-auto pt-3 ps-5 border-red-l-2">
+                ... ¿Tienes alguna consulta o no encuentras el servicio que
+                buscas? <br></br>
+              </h2>
+              <p className="contact-p col-8 me-auto mt-4 ps-5">
+                Estamos aquí para brindarte una asistencia integral y solucionar
+                cualquier problema que puedas encontrar. Tu satisfacción es
+                nuestra prioridad, y estaremos encantados de ayudarte en todo lo
+                que necesites respecto a tu moto.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div
+          id="footer"
+          className="col-12 d-flex flex-column margin-top-section4"
+        >
+          <h2></h2>
+          <p c>© garagellave13.com 2023. Todos los derechos reservados</p>
         </div>
       </div>
     </div>
