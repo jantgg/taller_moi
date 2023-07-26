@@ -84,7 +84,7 @@ export const Home = () => {
         <div className="col-3 text-white mx-auto my-auto center-text">
           {" "}
           <div className={`container-logo ${isInViewH ? " " : "  hided"}`}>
-            <img src={logo} style={{ width: "40vw", height: "35vh" }} />
+            <img src={logo} style={{ width: "40vw", height: "auto" }} />
           </div>
           <a class="container-arrow" onClick={scrollToStart}>
             <span>
@@ -118,7 +118,7 @@ export const Home = () => {
             <div className="col-7 d-flex flex-column ps-5">
               <h1 className="col-12 who-h1 pt-5">¿Quiénes somos?</h1>
               <h2 className="col-12 who-h2 pt-3">
-                ... No somos el típico taller oficial
+                ... lo que no somos el típico taller oficial
               </h2>
               <p className="col-12 who-p pe-3 pt-5">
                 {" "}
@@ -344,8 +344,8 @@ export const Home = () => {
                 Contacto
               </h1>{" "}
               <h2 className="contact-h2 col-8 me-auto pt-3 ps-5 border-red-l-2">
-                ... ¿Tienes alguna consulta o no encuentras el servicio que
-                buscas? <br></br>
+                ¿Tienes alguna consulta o no encuentras el servicio que buscas?{" "}
+                <br></br>
               </h2>
               <p className="contact-p col-8 me-auto mt-4 ps-5">
                 Estamos aquí para brindarte una asistencia integral y solucionar

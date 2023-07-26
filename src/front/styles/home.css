@@ -199,3 +199,12 @@ body {
 .border-red-b-2 {
   border-bottom: 5px solid #22ac00;
 }
+.border-red-b-3 {
+  border-bottom: 2px solid #22ac00;
+}
+.border-red-t {
+  border-top: 3px solid #22ac00;
+}
+.border-red-t-2 {
+  border-top: 2px solid #22ac00;
+}

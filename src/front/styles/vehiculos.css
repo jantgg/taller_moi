@@ -1,0 +1,26 @@
+.ocasion {
+  color: #33ff00;
+  text-shadow: -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000,
+    2px 2px 0 #000;
+  text-align: left;
+}
+.veh-tittle {
+  font-size: 5.2vw;
+  color: #ffffff;
+  text-transform: uppercase;
+  text-shadow: -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000,
+    2px 2px 0 #000;
+  font-family: "Rem", sans-serif;
+  text-align: center;
+  font-weight: 900;
+  font-style: italic;
+}
+
+.container-sliced {
+  display: grid;
+  place-content: center;
+  text-transform: uppercase;
+}
+.h100 {
+  height: 100%;
+}
