@@ -1,5 +1,6 @@
 import React, { useContext, useEffect, useState, useRef } from "react";
 import { Context } from "../store/appContext";
+import { Motocard } from "../component/motocard";
 import taller from "../../img/taller.jpg";
 import logo from "../../img/logoverde2.png";
 import cruzado from "../../img/cruzado.jpg";
@@ -11,9 +12,6 @@ import freno from "../../img/icons/freno.jpg";
 import fondotituloveh from "../../img/fondotituloveh.png";
 import motos from "../../img/motos.jpg";
 import fondo from "../../img/fondo-web-4.jpg";
-import { SlLocationPin } from "react-icons/sl";
-import { BsTelephoneOutbound } from "react-icons/bs";
-import { GoMail } from "react-icons/go";
 
 import "../../styles/services.css";
 import "../../styles/home.css";
@@ -37,7 +35,7 @@ export const Vehiculos = () => {
     backgroundImage: `url(${motos})`,
     backgroundSize: "cover",
     backgroundPosition: "center center",
-    height: "50vh",
+    height: "45vh",
   };
   const stylesImgVeh = {
     backgroundImage: `url(${fondotituloveh})`,
@@ -51,21 +49,53 @@ export const Vehiculos = () => {
     <div className="d-flex flex-column">
       <div className="shadowed d-flex flex-column" style={stylesImgMotos}>
         <div className="col-12 d-flex flex-column h100">
-          <div
-            className="d-flex flex-column col-8 mx-auto my-auto"
-            style={stylesImgVeh}
-          >
-            <h1 className="my-auto veh-tittle">
+          <div className="d-flex flex-column col-8 mx-auto my-auto">
+            <h1 className="my-auto veh-tittle border-green-b-3 col-11">
               {" "}
               <span className="ocasion me-4">Motos </span> de ocasión
             </h1>
+            <div className="border-green-t col-4"></div>
           </div>
           <div className=" col-8 mx-auto ">
             <div className=" col-3 me-auto"></div>
           </div>
         </div>
       </div>
-      <div className="" style={backgroundpage}></div>
+      <div className=" d-flex flex-column" style={backgroundpage}>
+        <div
+          id="tittle&bar"
+          className="col-6 mx-auto margin-top-veh d-flex flex-column center-text border-red-l "
+        >
+          <h1 className="border-red-l-2 service-h1">
+            Comprar Motos de Segunda Mano revisadas
+          </h1>
+          <div
+            id="filter"
+            className="mx-auto d-flex col-10 justify-content-between"
+          >
+            <form class="form-inline d-flex col-5">
+              <input
+                class=" col-10 mr-sm-2 input-search ps-3"
+                type="search"
+                placeholder="🔍︎ Buscar"
+                aria-label="Search"
+              />
+              <button
+                class="boton-search my-2 my-sm-0 col-2 py-2"
+                type="submit"
+              >
+                Buscar
+              </button>
+            </form>
+            <button className="col-2 botonaco py-2">Scooter</button>
+            <button className="col-2 botonaco py-2">Naked</button>
+            <button className="col-2 botonaco py-2">Off-Road</button>
+          </div>
+        </div>
+        <div className=" row mx-auto">
+          <Motocard />
+        </div>
+      </div>
     </div>
   );
 };
