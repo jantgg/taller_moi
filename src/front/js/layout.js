@@ -6,6 +6,7 @@ import { BackendURL } from "./component/backendURL";
 import { Home } from "./pages/home";
 import { Login } from "./pages/login";
 import { Vehiculos } from "./pages/vehiculos";
+import { UpdateMotos } from "./pages/updatemotos";
 import injectContext from "./store/appContext";
 
 import { Navbar } from "./component/navbar";
@@ -29,6 +30,7 @@ const Layout = () => {
             <Route element={<h1>Not found!</h1>} />
             <Route element={<Vehiculos />} path="/vehiculos" />
             <Route element={<Login />} path="/login" />
+            <Route element={<UpdateMotos />} path="/updatemotos" />
           </Routes>
         </ScrollToTop>
       </BrowserRouter>

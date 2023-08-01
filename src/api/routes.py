@@ -2,12 +2,16 @@
 This module takes care of starting the API Server, Loading the DB and Adding the endpoints
 """
 from flask import Flask, request, jsonify, url_for, Blueprint
-from api.models import db, User
+from api.models import db, User, Bike, Photo
 from api.utils import generate_sitemap, APIException
-
+from werkzeug.utils import secure_filename
 from flask_jwt_extended import create_access_token
 from flask_jwt_extended import get_jwt_identity
 from flask_jwt_extended import jwt_required
+
+import cloudinary
+import json
+
 
 api = Blueprint('api', __name__)
 
@@ -38,7 +42,7 @@ def user_login():
 
 @api.route('/bikes', methods=['GET'])
 def get_all_bikes():
-    bikes = Bikes.query.all()
+    bikes = Bike.query.all()
     bikes_serialized = []
     for bike in bikes:
         bike_serialized = bike.serialize()
@@ -48,32 +52,32 @@ def get_all_bikes():
         bikes_serialized.append(bike_serialized) 
     return jsonify({"body": bikes_serialized}), 200
 
-@api.route('/bikes', methods=['POST'])
-@jwt_required()
-def create_bike():
-    data = request.get_json()
-    email = get_jwt_identity()
-    user = User.query.filter_by(email=email).first()
-    new_bikes = []
-    for bike_data in data:
-        new_bike = Bike(
-            name=bike_data['name'],
-            start_location_text=bike_data['start_location_text'],
-            end_location_text=bike_data['end_location_text'],
-            interest_text=bike_data['interest_text'],
-            start_location_name=bike_data['start_location_name'],
-            start_latitude=bike_data['start_latitude'],
-            start_longitude=bike_data['start_longitude'],
-            end_location_name=bike_data['end_location_name'],
-            end_latitude=bike_data['end_latitude'],
-            end_longitude=bike_data['end_longitude'],
-            user_id = user.id,
-        )
-        db.session.add(new_bike)
-        new_bikes.append(new_bike)
-    db.session.commit()
-    response_dict = {"response": "bike send successfully", "bike_ids": [r.id for r in new_bikes]}
-    return jsonify(response_dict), 200
+# @api.route('/bikes', methods=['POST'])
+# @jwt_required()
+# def create_bike():
+#     data = request.get_json()
+#     email = get_jwt_identity()
+#     user = User.query.filter_by(email=email).first()
+#     new_bikes = []
+#     for bike_data in data:
+#         new_bike = Bike(
+#             model=bike_data['name'],
+#             brand=bike_data['start_location_text'],
+#             type_moto=bike_data['end_location_text'],
+#             year=bike_data['year'],
+#             kms=bike_data['kms'],
+#             start_latitude=bike_data['start_latitude'],
+#             start_longitude=bike_data['start_longitude'],
+#             end_location_name=bike_data['end_location_name'],
+#             end_latitude=bike_data['end_latitude'],
+#             end_longitude=bike_data['end_longitude'],
+#             user_id = user.id,
+#         )
+#         db.session.add(new_bike)
+#         new_bikes.append(new_bike)
+#     db.session.commit()
+#     response_dict = {"response": "bike send successfully", "bike_ids": [r.id for r in new_bikes]}
+#     return jsonify(response_dict), 200
 
 
 @api.route('/photos', methods=['POST'])
@@ -84,10 +88,10 @@ def upload_photo():
     user = User.query.filter_by(email=email).first()
     new_photos=[]
     bike_data = json.loads(request.form['bike_data'])
-    new_bike = bike(
+    new_bike = Bike(
         model=bike_data['model'],
-        brand=bike_data['start_location_brand'],
-        type_moto=bike_data['type'],
+        brand=bike_data['brand'],
+        type_moto=bike_data['type_moto'],
         year=bike_data['year'],
         kms=bike_data['kms'],
         carnet=bike_data['carnet'],
@@ -98,7 +102,7 @@ def upload_photo():
     db.session.commit()  # Confirma los cambios en la base de datos para obtener la ID
     bike_id = new_bike.id  # Obtiene la ID de la nueva ruta
     for photo in photo_file:
-        upload_result = cloudinary.uploader.upload(photo, secure=True)
+        upload_result = cloudinary.uploader.upload(photo, secure=True, folder='tallermoi')
         new_photos.append(Photo(
             name=secure_filename(photo.filename),
             path=upload_result['secure_url'],

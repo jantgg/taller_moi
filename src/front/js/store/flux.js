@@ -1,6 +1,7 @@
 const getState = ({ getStore, getActions, setStore }) => {
   return {
     store: {
+      bikes: [],
       message: null,
       backendurl:
         "https://3001-4geeksacade-reactflaskh-s41igp2nysj.ws-eu102.gitpod.io/api/",
@@ -21,6 +22,11 @@ const getState = ({ getStore, getActions, setStore }) => {
       // Use getActions to call a function within a fuction
       exampleFunction: () => {
         getActions().changeColor(0, "green");
+      },
+      getBikes: async () => {
+        const response = await fetch(getStore().backendurl + "bikes");
+        const data = await response.json();
+        setStore({ bikes: data.body });
       },
       setScrollTrigger: () => {
         setStore({ viewType: true });

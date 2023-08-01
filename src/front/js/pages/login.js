@@ -1,4 +1,5 @@
 import React, { useContext, useEffect, useState, useRef } from "react";
+import { Navigate, useNavigate } from "react-router-dom";
 import { Context } from "../store/appContext";
 import { Motocard } from "../component/motocard";
 import taller from "../../img/taller.jpg";
@@ -25,6 +26,7 @@ export const Login = () => {
   const isDesktop = window.innerWidth >= 1000;
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const navigate = useNavigate();
 
   const sendLogin = async () => {
     const response = await fetch(store.backendurl + "login", {
@@ -40,8 +42,8 @@ export const Login = () => {
     if (response.ok) {
       const data = await response.json();
       localStorage.setItem("token", data.token);
-      await actions.syncuser();
       console.log("OKOKOKOKOKOKOKOKOK");
+      navigate("/updatemotos");
       // setTimeout(() => {
       //   setMoveOut(true);
       //   setTimeout(() => {
@@ -49,7 +51,6 @@ export const Login = () => {
       //   }, 400);
       // }, 40);
     } else {
-      console.log("ERROR ERROR ERROR");
       setCredentialsError(true);
     }
   };

@@ -23,6 +23,34 @@ import ScrollTrigger from "gsap/ScrollTrigger";
 export const Vehiculos = () => {
   const { store, actions } = useContext(Context);
   const isDesktop = window.innerWidth >= 1000;
+  const [bikes, setBikes] = useState([]);
+
+  useEffect(() => {
+    getBikes();
+  }, []);
+
+  // const getTheBikes = async () => {
+  //   try {
+  //     const bikes = await actions.getBikes();
+  //     setBikes(bikes);
+  //   } catch (error) {
+  //     // Manejar el error en caso de que ocurra.
+  //     console.error("Error al obtener las bicicletas:", error);
+  //   }
+  // };
+
+  const getBikes = async () => {
+    const response = await fetch(store.backendurl + "bikes");
+    const data = await response.json();
+    const bikesWithPhotos = data.body.map((bike) => ({
+      ...bike,
+      photos: bike.photos.map((photo) => ({
+        id: photo.id,
+        url: photo.path,
+      })),
+    }));
+    setBikes(bikesWithPhotos);
+  };
 
   const backgroundpage = {
     backgroundImage: `url(${fondo})`,
@@ -88,14 +116,24 @@ export const Vehiculos = () => {
               </button>
             </form>
             <button className="col-2 botonaco py-2">Scooter</button>
-            <button className="col-2 botonaco py-2">Naked</button>
+            <button className="col-2 botonaco py-2">Deportiva</button>
             <button className="col-2 botonaco py-2">Off-Road</button>
           </div>
         </div>
         <div className=" row mx-auto">
-          <Motocard />
+          {bikes.map((bike, index) => (
+            <Motocard data={bike} />
+          ))}
         </div>
       </div>
+      <button
+        onClick={() => {
+          console.log(bikes[0]);
+        }}
+      >
+        {" "}
+        PUKSA AQYERU
+      </button>
     </div>
   );
 };
