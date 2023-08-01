@@ -120,7 +120,7 @@ export const Vehiculos = () => {
             <button className="col-2 botonaco py-2">Off-Road</button>
           </div>
         </div>
-        <div className=" row mx-auto">
+        <div className="col-12 row mx-auto">
           {bikes.map((bike, index) => (
             <Motocard data={bike} />
           ))}

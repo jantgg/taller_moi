@@ -1,5 +1,6 @@
 import React, { useContext, useEffect, useState, useRef } from "react";
 import { Context } from "../store/appContext";
+import SliderBikes from "../component/sliderbikes.js";
 import motos from "../../img/motos.jpg";
 
 import "../../styles/services.css";
@@ -32,58 +33,9 @@ export const Motocard = (content) => {
       id="moto-card"
       className="col-3 mx-auto d-flex flex-column motocard px-0 my-5"
     >
-      <div
-        id={bike.model + bike.id}
-        className="carousel slide "
-        data-bs-ride="carousel"
-      >
-        <div className="carousel-inner">
-          {photos.map((photo, index) => (
-            <div
-              key={index}
-              className={`carousel-item ${index === 0 ? "active" : ""}`}
-            >
-              <img
-                src={photo}
-                className="d-block col-12 sizeimgcarousel"
-                alt="..."
-              />
-            </div>
-          ))}
-          {/* <div className="carousel-item active">
-            <img src={motos} className="d-block w-100" alt="..." />
-          </div>
-          <div className="carousel-item">
-            <img src={motos} className="d-block w-100" alt="..." />
-          </div>
-          <div className="carousel-item">
-            <img src={motos} className="d-block w-100" alt="..." />
-          </div> */}
-        </div>
-        <button
-          className="carousel-control-prev "
-          type="button"
-          data-bs-target={`#${bike.model + bike.id}`}
-          data-bs-slide="prev"
-        >
-          <span
-            className="carousel-control-prev-icon "
-            aria-hidden="true"
-          ></span>
-          <span className="visually-hidden">Previous</span>
-        </button>
-        <button
-          className="carousel-control-next "
-          type="button"
-          data-bs-target={`#${bike.model + bike.id}`}
-          data-bs-slide="next"
-        >
-          <span
-            className="carousel-control-next-icon "
-            aria-hidden="true"
-          ></span>
-          <span className="visually-hidden">Next</span>
-        </button>
+      <div className="col-12">
+        {" "}
+        <SliderBikes data={photos} groupSize={1} />
       </div>
 
       <div

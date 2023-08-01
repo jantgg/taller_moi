@@ -1,5 +1,5 @@
 import React, { useState, useContext, useRef } from "react";
-import "../../styles/slider.css";
+import "../../styles/sliderbikes.css";
 import { Link, useNavigate } from "react-router-dom";
 import { Context } from "../store/appContext";
 
@@ -22,8 +22,8 @@ const SliderBikes = ({ data, groupSize }) => {
       setStartIndex(startIndex + groupSize);
       setTimeout(() => {
         setIsVisible(true);
-      }, 250);
-    }, 200);
+      }, 5);
+    }, 2);
   };
 
   const handlePrevClick = () => {
@@ -32,19 +32,19 @@ const SliderBikes = ({ data, groupSize }) => {
       setStartIndex(Math.max(startIndex - groupSize, 0));
       setTimeout(() => {
         setIsVisible(true);
-      }, 250);
-    }, 200);
+      }, 5);
+    }, 2);
   };
 
   return (
-    <div className="d-flex flex-column">
+    <div className="d-flex flex-column ">
       {dataToRender.map((url, idx) => {
         const index = startIndex + idx; // Crear una variable actualizada para el índice
         return (
-          <div className="bordecitoall">
+          <div className="bordecitoall relative hphotobikes bg-black">
             <div
               key={index}
-              className={`hphoto col-12 text-white bordecitob mx-auto ${
+              className={`hphotobikes col-12 text-white  absolute mx-auto ${
                 isVisible ? " show-slider" : " hide-slider"
               }`}
               style={{
@@ -54,9 +54,9 @@ const SliderBikes = ({ data, groupSize }) => {
                 backgroundPosition: "center",
               }}
             ></div>
-            <div className="col-12 d-flex ">
+            <div className="col-12 d-flex absolute marggin-btn">
               <button
-                className={` boton-i px-0 col-2 text-white ${
+                className={` boton-i px-0 col-1 text-white ${
                   startIndex === 0 ? " opa0" : " opa1"
                 }`}
                 onClick={handlePrevClick}
@@ -64,11 +64,9 @@ const SliderBikes = ({ data, groupSize }) => {
               >
                 <i className="fa-solid fa-chevron-left"></i>
               </button>
-              <div className="col-8 px-0 text-white center-text">
-                {(index + 1 + "").padStart(2, "0")}
-              </div>
+              <div className="col-10 px-0 text-white center-text"></div>
               <button
-                className={` boton-i col-2 px-0 text-white ${
+                className={` boton-i col-1 px-0 text-white ${
                   endIndex >= data.length ? " opa0" : " opa1"
                 }`}
                 onClick={handleNextClick}
