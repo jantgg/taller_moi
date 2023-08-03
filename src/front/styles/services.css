@@ -125,6 +125,7 @@
   font-size: 2.9vw;
   color: #22ac00;
   text-align: left;
+  padding-top: 6vh;
 }
 .contact-h2 {
   padding-left: 2vw;
@@ -132,11 +133,20 @@
   color: rgb(65, 65, 65);
   text-align: right;
 }
+.contact-adress {
+  padding-left: 1vw;
+  font-size: 1.4vw;
+  color: rgb(65, 65, 65);
+  text-align: left;
+}
 .contact-p {
   font-size: 1.05vw;
-  text-align: justify;
+  text-align: right;
 }
 .icons-contact {
-  font-size: 2.8vw;
+  font-size: 2vw;
   color: #22ac00;
+}
+.mt-6vh {
+  margin-top: 5.3vh;
 }

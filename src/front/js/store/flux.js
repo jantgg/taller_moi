@@ -3,6 +3,10 @@ const getState = ({ getStore, getActions, setStore }) => {
     store: {
       bikes: [],
       message: null,
+      citas: null,
+      telefono: null,
+      direccion: null,
+
       backendurl:
         "https://3001-4geeksacade-reactflaskh-s41igp2nysj.ws-eu102.gitpod.io/api/",
       demo: [
@@ -28,20 +32,16 @@ const getState = ({ getStore, getActions, setStore }) => {
         const data = await response.json();
         setStore({ bikes: data.body });
       },
+      getLinks: async () => {
+        const response = await fetch(getStore().backendurl + "link");
+        const data = await response.json();
+        setStore({ citas: data.body.citas });
+        setStore({ telefono: data.body.telefono });
+        setStore({ direccion: data.body.direccion });
+        console.log(data.body);
+      },
       setScrollTrigger: () => {
         setStore({ viewType: true });
-      },
-      getMessage: async () => {
-        try {
-          // fetching data from the backend
-          const resp = await fetch(process.env.BACKEND_URL + "/api/hello");
-          const data = await resp.json();
-          setStore({ message: data.message });
-          // don't forget to return something, that is how the async resolves
-          return data;
-        } catch (error) {
-          console.log("Error loading message from backend", error);
-        }
       },
       changeColor: (index, color) => {
         //get the store

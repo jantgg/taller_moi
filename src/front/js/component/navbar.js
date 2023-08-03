@@ -55,6 +55,7 @@ export const Navbar = () => {
     if (currentPath !== "/home") {
       setIsInView(false);
     }
+    console.log(store.citas);
   }, []);
 
   useEffect(() => {
@@ -101,7 +102,7 @@ export const Navbar = () => {
                 scrollToTop();
               }}
             >
-              <img src={logo} style={{ width: "8vw", height: "auto" }} />
+              <img src={logo} style={{ width: "5vw", height: "auto" }} />
             </Link>
             <div></div>
             <button
@@ -118,17 +119,18 @@ export const Navbar = () => {
             <div className=" collapse navbar-collapse" id="navbarNavDropdown">
               <ul className={`navbar-nav ms-auto ${isInView ? " " : " "}`}>
                 <div className="nav-item ">
-                  <Link
-                    to="/test"
+                  <a
+                    href={`http://${store.citas}`}
+                    target="_blank"
                     className={`nav-link mx-2 me-5 px-2 line center-text ${
                       selected === 0 && ""
                     } ${isInView ? " text-white" : "  text-black"}`}
                     onClick={() => {}}
                   >
                     CITA PREVIA
-                  </Link>
+                  </a>
                 </div>
-                <div className="nav-item">
+                {/* <div className="nav-item">
                   <Link
                     to="/vehiculos"
                     className={`nav-link  mx-2 me-5 line  px-2 ${
@@ -138,7 +140,7 @@ export const Navbar = () => {
                   >
                     BLOG
                   </Link>
-                </div>
+                </div> */}
                 <div className="nav-item">
                   <Link
                     to="/vehiculos"

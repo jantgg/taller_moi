@@ -73,7 +73,6 @@ export const Home = () => {
     backgroundSize: "cover",
     backgroundRepeat: "no-repeat",
     width: "100%",
-    height: "auto",
   };
 
   return (
@@ -121,7 +120,7 @@ export const Home = () => {
               <h2 className="col-12 who-h2 pt-3">
                 ... lo que no somos el típico taller oficial
               </h2>
-              <p className="col-12 who-p pe-3 pt-5">
+              <p className="col-12 who-p pe-3 pt-5  text-wrap">
                 {" "}
                 En{" "}
                 <span className="text-my-red ">
@@ -136,7 +135,7 @@ export const Home = () => {
                 totalmente en cada proyecto, dedicando la atención y el cuidado
                 que tu vehículo merece.<br></br>{" "}
               </p>
-              <p className="col-12 who-p pe-3 pb-5">
+              <p className="col-12 who-p pe-3 pb-5 text-wrap">
                 Tu tranquilidad es nuestra prioridad, y nos esforzamos en
                 ofrecerte resultados de calidad respaldados por años de
                 experiencia y herramientas de calidad.
@@ -305,55 +304,55 @@ export const Home = () => {
           id="contact"
           className="col-12 ms-auto d-flex flex-column margin-top-section3 "
         >
-          <div className="col-12"></div>
-          <div className="row mx-auto">
+          <div className="row mx-auto col-9">
             {" "}
-            <div className="col-6 mt-3 py-5 d-flex flex-column my-auto">
-              <div className="d-flex col-12">
-                <h2 className="ms-auto contact-h2 my-auto pe-5">
-                  {" "}
-                  C/ Santa n4, San Pedro Alcántara{" "}
-                </h2>
-                <p className="icons-contact pe-5">
-                  {" "}
-                  <SlLocationPin />
-                </p>
-              </div>
-              <div className="d-flex col-12">
-                <h2 className="ms-auto contact-h2 my-auto pe-5">
-                  {" "}
-                  +34 610 03 47 73
-                </h2>
-                <p className="icons-contact pe-5">
-                  {" "}
-                  <BsTelephoneOutbound />
-                </p>
-              </div>
-              <div className="d-flex col-12">
-                <h2 className="ms-auto contact-h2 mt-4 mb-1 pe-5">
-                  {" "}
-                  moises@garage.com{" "}
-                </h2>
-                <p className="icons-contact pe-5">
-                  {" "}
-                  <GoMail />
-                </p>
-              </div>
-            </div>
-            <div className="col-6 border-red-l flex-column mt-3 pb-5 ps-0">
-              <h1 className="contact-h1 col-12 border-red-l-2 ps-5 mb-0 ">
-                Contacto
-              </h1>{" "}
-              <h2 className="contact-h2 col-8 me-auto pt-3 ps-5 border-red-l-2">
+            <div className="col-6 flex-column mt-6vh px-0">
+              <h2 className="contact-h2 col-12 ms-auto pt-2 ps-5  pe-5 text-wrap">
                 ¿Tienes alguna consulta o no encuentras el servicio que buscas?{" "}
                 <br></br>
               </h2>
-              <p className="contact-p col-8 me-auto mt-4 ps-5">
-                Estamos aquí para brindarte una asistencia integral y solucionar
-                cualquier problema que puedas encontrar. Tu satisfacción es
-                nuestra prioridad, y estaremos encantados de ayudarte en todo lo
-                que necesites respecto a tu moto.
+              <p className="contact-p col-12 ms-auto mt-5 ps-5 pe-5  text-wrap">
+                No dudes en contactar con nosotros, estamos aquí para brindarte
+                una asistencia integral y solucionar cualquier problema que
+                puedas encontrar. <br></br> Tu satisfacción es nuestra
+                prioridad, y estaremos encantados de ayudarte en todo lo que
+                necesites respecto a tu moto.
               </p>
+            </div>
+            <div className="col-6 d-flex border-red-l flex-column px-0  my-auto">
+              <h1 className="contact-h1 col-12  ps-5 mb-0 border-red-l-2">
+                Contacto
+              </h1>{" "}
+              <div className="d-flex col-12">
+                <p className="icons-contact ms-5">
+                  {" "}
+                  <SlLocationPin />
+                </p>
+                <h2 className="me-auto contact-adress my-auto ">
+                  {" "}
+                  C/ Santa n4, San Pedro Alcántara{" "}
+                </h2>
+              </div>
+              <div className="d-flex col-12">
+                <p className="icons-contact ms-5">
+                  {" "}
+                  <BsTelephoneOutbound />
+                </p>
+                <h2 className="me-auto contact-adress my-auto ">
+                  {" "}
+                  +34 610 03 47 73
+                </h2>
+              </div>
+              <div className="d-flex col-12 pb-5 mb-5">
+                <p className="icons-contact ms-5">
+                  {" "}
+                  <GoMail />
+                </p>
+                <h2 className="me-auto contact-adress mt-4 mb-1 ">
+                  {" "}
+                  moises@garage.com{" "}
+                </h2>
+              </div>
             </div>
           </div>
         </div>

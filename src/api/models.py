@@ -63,3 +63,23 @@ class Photo(db.Model):
             "name": self.name,
             "path": self.path,
         }
+
+class Links(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    fecha = db.Column(db.String(250), nullable=False)
+    citas = db.Column(db.String(250), nullable=False)
+    telefono = db.Column(db.String(250), nullable=False)
+    direccion = db.Column(db.String(250), nullable=False)
+    user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
+
+    def __repr__(self):
+        return f'{self.fecha}'
+
+    def serialize(self):
+        return {
+            "id": self.id,
+            "citas": self.citas,
+            "telefono": self.telefono,
+            "direccion": self.direccion,
+            "fecha": self.fecha,
+        }

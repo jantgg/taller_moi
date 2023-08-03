@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState, useRef } from "react";
 import { Context } from "../store/appContext";
-import { Motocard } from "../component/motocard";
+import CreateLink from "../component/createlink.js";
+import { UpdateLink } from "../component/updatelink.js";
 import NewSlider from "../component/newslider.js";
 import "../../styles/services.css";
 import "../../styles/home.css";
@@ -10,7 +11,7 @@ import "../../styles/vehiculos.css";
 export const UpdateMotos = () => {
   const { store, actions } = useContext(Context);
   const isDesktop = window.innerWidth >= 1000;
-
+  const [linkData, setLinkData] = useState(null);
   const [model, setModel] = useState([]);
   const [brand, setBrand] = useState([]);
   const [type_moto, setType] = useState([]);
@@ -23,31 +24,13 @@ export const UpdateMotos = () => {
   const [result, setResult] = useState(null);
   const [previewPhotos, setPreviewPhotos] = useState(null);
 
-  const sendLogin = async () => {
-    const response = await fetch(store.backendurl + "login", {
-      method: "POST",
-      headers: {
-        "content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        email: email,
-        password: password,
-      }),
-    });
-    if (response.ok) {
-      const data = await response.json();
-      localStorage.setItem("token", data.token);
-      console.log("OKOKOKOKOKOKOKOKOK");
-      // setTimeout(() => {
-      //   setMoveOut(true);
-      //   setTimeout(() => {
-      //     navigate("/");
-      //   }, 400);
-      // }, 40);
-    } else {
-      console.log("ERROR ERROR ERROR");
-      setCredentialsError(true);
-    }
+  useEffect(() => {
+    handleLinkGet();
+  }, []);
+
+  const handleLinkGet = async () => {
+    await actions.getLinks();
+    setLinkData(store.links);
   };
 
   const uploadBike = async () => {
@@ -189,6 +172,26 @@ export const UpdateMotos = () => {
           )}
         </div>
       </div>
+      <div className="d-flex flex-column col-4 mx-auto">
+        {linkData ? (
+          <div>
+            <div>
+              {" "}
+              <h2 classname="who-h2">Mis links</h2>
+              <p>Fecha: {linkData.fecha}</p>
+              <p>Citas: {linkData.citas}</p>
+              <p>Teléfono: {linkData.telefono}</p>
+              <p>Dirección: {linkData.direccion}</p>
+            </div>
+            <div>
+              <UpdateLink />
+            </div>
+          </div>
+        ) : (
+          <CreateLink />
+        )}
+      </div>
+      <div className="d-flex flex-column col-4 mx-auto"></div>
     </div>
   );
 };

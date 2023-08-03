@@ -2,7 +2,7 @@
 This module takes care of starting the API Server, Loading the DB and Adding the endpoints
 """
 from flask import Flask, request, jsonify, url_for, Blueprint
-from api.models import db, User, Bike, Photo
+from api.models import db, User, Bike, Photo, Links
 from api.utils import generate_sitemap, APIException
 from werkzeug.utils import secure_filename
 from flask_jwt_extended import create_access_token
@@ -128,3 +128,61 @@ def delete_bike(bike_id):
     db.session.delete(bike)
     db.session.commit()
     return jsonify({'message': 'Bike and associated photos deleted successfully'}), 200
+
+
+@api.route('/links', methods=['POST'])
+@jwt_required()
+def create_link():
+    data = request.get_json()
+    email = get_jwt_identity()
+    user = User.query.filter_by(email=email).first()
+    new_link = Links(
+        fecha=data['fecha'],
+        citas=data['citas'],
+        telefono=data['telefono'],
+        direccion=data['direccion'],
+        user_id=user.id,)
+    db.session.add(new_link)
+    db.session.commit()
+    link_serialized = new_link.serialize()
+    return jsonify({"body": link_serialized}), 201
+
+
+@api.route('/links/<int:link_id>', methods=['PUT'])
+@jwt_required()
+def update_link(link_id):
+    data = request.get_json()
+    email = get_jwt_identity()
+    user = User.query.filter_by(email=email).first()
+    link = Links.query.filter_by(id=link_id, user_id=user.id).first()
+    link.fecha = data['fecha']
+    link.citas = data['citas']
+    link.telefono = data['telefono']
+    link.direccion = data['direccion']
+    db.session.commit()
+    link_serialized = link.serialize()
+    return jsonify({"body": link_serialized}), 200
+
+
+@api.route('/photographer', methods=['PUT'])
+@jwt_required()
+def update_photographer():
+    current_user = get_jwt_identity()
+    photographer = Photographer.query.filter_by(email=current_user).first()
+    if not photographer:
+        return jsonify({"msg": "Photographer not found"}), 401
+    data = request.get_json()
+    photographer.user_name = data.get('user_name', photographer.user_name)
+    photographer.location_name = data.get('location_name', photographer.location_name)
+    photographer.find_me_text = data.get('find_me_text', photographer.find_me_text)
+    photographer.instagram = data.get('instagram', photographer.instagram)
+    photographer.services = data.get('services', photographer.services)
+    db.session.commit()
+    return jsonify({"msg": "Photographer updated successfully"}), 200
+
+
+@api.route('/link', methods=['GET'])
+def get_first_link():
+    links = Links.query.first()
+    links_serialized = links.serialize()
+    return jsonify({"body": links_serialized}), 200

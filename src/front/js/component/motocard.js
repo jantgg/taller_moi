@@ -17,14 +17,41 @@ export const Motocard = (content) => {
   const [selectedBikeImages, setSelectedBikeImages] = useState([]);
   const photos = selectedBikeImages.map((obj) => obj.url);
   const bike = content.data;
+  const [showButton, setShowButton] = useState(false);
 
   useEffect(() => {
     getPhotos();
+    // Check if the token exists in localStorage
+    const token = localStorage.getItem("token");
+    setShowButton(!!token); // Convert token to a boolean value
   }, []);
 
   const getPhotos = async (routeId) => {
     if (bike) {
       setSelectedBikeImages(bike.photos);
+    }
+  };
+
+  const handleDelete = async () => {
+    try {
+      const response = await fetch(`${store.backendurl}bikes/${bike.id}`, {
+        method: "DELETE",
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem("token")}`,
+          "Content-Type": "application/json",
+        },
+      });
+
+      if (response.ok) {
+        console.log("Bike deleted successfully");
+        // Optionally, you can update your state or do other tasks after successful deletion
+      } else {
+        const data = await response.json();
+        alert(data.message); // Display the error message using alert
+      }
+    } catch (error) {
+      console.error("Error:", error);
+      alert("Something went wrong while deleting the bike."); // Display a generic error message using alert
     }
   };
 
@@ -58,14 +85,7 @@ export const Motocard = (content) => {
           {bike.price} €
         </div>
       </div>
-      <button
-        onClick={() => {
-          console.log(photos);
-        }}
-      >
-        {" "}
-        a ver
-      </button>
+      {showButton && <button onClick={handleDelete}>Borrar</button>}
     </div>
   );
 };

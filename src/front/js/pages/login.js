@@ -13,7 +13,6 @@ import freno from "../../img/icons/freno.jpg";
 import fondotituloveh from "../../img/fondotituloveh.png";
 import motos from "../../img/motos.jpg";
 import fondo from "../../img/fondo-web-4.jpg";
-
 import "../../styles/services.css";
 import "../../styles/home.css";
 import "../../styles/rows.css";
