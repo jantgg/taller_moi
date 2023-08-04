@@ -2,24 +2,19 @@
   color: #22ac00;
   text-align: center;
 }
-.services-tittle-size {
-  font-size: 1.3vw;
-}
+
 .services-content-color {
   color: #000000;
   text-align: center;
 }
-.services-content-size {
-  font-size: 1vw;
-}
+
 .services-cita-color {
   color: #22ac00;
   text-align: center;
   cursor: pointer;
+  text-decoration: none;
 }
-.services-cita-size {
-  font-size: 1.6vw;
-}
+
 .services-img {
   content: ""; /* Asegura que el contenido del ::before esté presente */
   top: 0;
@@ -121,32 +116,153 @@
 .flip-card-back {
   transform: rotateY(180deg);
 }
-.contact-h1 {
-  font-size: 2.9vw;
-  color: #22ac00;
-  text-align: left;
-  padding-top: 6vh;
-}
-.contact-h2 {
-  padding-left: 2vw;
-  font-size: 1.9vw;
-  color: rgb(65, 65, 65);
-  text-align: right;
-}
-.contact-adress {
-  padding-left: 1vw;
-  font-size: 1.4vw;
-  color: rgb(65, 65, 65);
-  text-align: left;
-}
-.contact-p {
-  font-size: 1.05vw;
-  text-align: right;
-}
-.icons-contact {
-  font-size: 2vw;
-  color: #22ac00;
-}
+
 .mt-6vh {
   margin-top: 5.3vh;
+}
+
+.my-link:hover {
+  color: black;
+}
+.adress-link:hover {
+  color: #22ac00;
+}
+.adress-link {
+  text-decoration: none;
+}
+
+@media (min-width: 1500px) {
+  .services-tittle-size {
+    font-size: 1.3vw;
+  }
+  .services-content-size {
+    font-size: 1vw;
+  }
+  .services-cita-size {
+    font-size: 1.6vw;
+  }
+  .contact-h1 {
+    font-size: 2.9vw;
+    color: #22ac00;
+    text-align: left;
+    padding-top: 6vh;
+    padding-bottom: 2vh;
+  }
+  .contact-h2 {
+    padding-left: 2vw;
+    font-size: 1.9vw;
+    color: rgb(65, 65, 65);
+    text-align: right;
+  }
+  .contact-adress {
+    padding-left: 1vw;
+    font-size: 1.4vw;
+    color: rgb(65, 65, 65);
+    text-align: left;
+    padding-left: 2vw;
+  }
+  .contact-p {
+    font-size: 1.05vw;
+    text-align: right;
+  }
+  .icons-contact {
+    font-size: 2vw;
+    color: #22ac00;
+    padding-left: 2vw;
+  }
+}
+@media (max-width: 1500px) {
+  .services-tittle-size {
+    font-size: 1.3vw;
+  }
+  .services-content-size {
+    font-size: 1vw;
+  }
+  .services-cita-size {
+    font-size: 1.6vw;
+  }
+  .contact-h1 {
+    font-size: 2.9vw;
+    color: #22ac00;
+    text-align: left;
+    padding-top: 6vh;
+  }
+  .contact-h2 {
+    padding-left: 2vw;
+    font-size: 1.9vw;
+    color: rgb(65, 65, 65);
+    text-align: right;
+  }
+  .contact-adress {
+    padding-left: 1vw;
+    font-size: 1.4vw;
+    color: rgb(65, 65, 65);
+    text-align: left !important;
+  }
+  .contact-p {
+    font-size: 1.05vw;
+    text-align: right;
+  }
+  .icons-contact {
+    font-size: 2vw;
+    color: #22ac00;
+    margin-left: 4vw;
+  }
+}
+
+@media (max-width: 980px) {
+  .services-tittle-size {
+    font-size: 5vw;
+  }
+  .services-content-size {
+    font-size: 3.7vw;
+  }
+  .services-cita-size {
+    font-size: 7vw;
+    color: rgb(65, 65, 65) !important;
+  }
+  .contact-h1 {
+    font-size: 12vw;
+    color: #22ac00;
+    text-align: center;
+    padding-top: 2vh;
+    padding-bottom: 2vh;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+  .contact-h2 {
+    padding-left: 2vw;
+    font-size: 6.7vw;
+    color: rgb(65, 65, 65);
+    text-align: center;
+  }
+  .contact-adress {
+    padding-left: 1vw;
+    font-size: 5vw;
+    color: rgb(65, 65, 65);
+    text-align: center !important;
+
+    text-decoration: none;
+  }
+  .contact-p {
+    font-size: 4vw;
+    text-align: center;
+    margin-bottom: 6vh;
+  }
+  .icons-contact {
+    font-size: 8vw;
+    color: #22ac00;
+    text-align: center;
+    margin-right: auto !important;
+    margin-left: auto !important;
+    margin-top: 2vh !important;
+  }
+  .container-contact {
+    margin-left: 1.5rem !important;
+    margin-right: 1.5rem !important;
+  }
+  .final-row-margins {
+    margin-bottom: 0 !important;
+    padding-bottom: 3vh !important;
+  }
 }

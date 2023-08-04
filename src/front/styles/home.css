@@ -36,9 +36,9 @@ body {
   transform: scale(2);
 }
 .container-arrow {
-  margin-top: 20vh;
+  margin-top: 15vh;
   text-transform: uppercase;
-  color: #22ac00;
+  color: #ffffff;
   display: inline-block;
   text-align: center;
   position: relative;
@@ -47,10 +47,10 @@ body {
   z-index: 10;
   width: 100%;
   cursor: pointer;
-  font-size: 12px;
+  font-size: 3vw;
 }
 .container-arrow:hover {
-  color: #22ac00;
+  color: #ffffff;
 }
 
 /* Arrow Bouncing */
@@ -125,27 +125,6 @@ body {
   /* change this per your requirement */
 }
 
-.comment {
-  font-style: italic;
-  color: #888;
-  text-align: right;
-  font-size: 0.8vw;
-}
-.who-h1 {
-  font-size: 2.9vw;
-  color: #22ac00;
-  text-align: left;
-}
-.who-h2 {
-  padding-left: 2vw;
-  font-size: 1.9vw;
-  color: rgb(65, 65, 65);
-  text-align: left;
-}
-.who-p {
-  font-size: 1.05vw;
-  text-align: left;
-}
 .text-my-red {
   color: #22ac00;
 }
@@ -172,21 +151,6 @@ body {
   border-right: 2px solid #22ac00;
 }
 
-.service-h1 {
-  font-size: 2.4vw;
-  color: #22ac00;
-  text-align: center;
-}
-.service-h2 {
-  padding-left: 2vw;
-  font-size: 1.9vw;
-  color: rgb(65, 65, 65);
-  text-align: center;
-}
-.service-p {
-  font-size: 1.05vw;
-  text-align: left;
-}
 .border-red-l {
   border-left: 3px solid #22ac00;
 }
@@ -208,65 +172,147 @@ body {
 .border-red-t-2 {
   border-top: 2px solid #22ac00;
 }
+.green-strong {
+  color: #22ac00;
+}
 
-/* FONT SIZE THRU MEDIA VIEWPORT
-@media (min-width: 1000px) {
-  .sizehome {
-    font-size: 6vw;
-  }
-  .sizehomemb {
-    font-size: 6vw;
-  }
-  .sizehomeq {
+@media (min-width: 1500px) {
+  .icon-arrow-size {
     font-size: 4vw;
   }
-  .sizehome2 {
-    font-size: 2vw;
+  .main-logo-size {
+    width: 50vw;
+    height: auto;
   }
-  .sizehomet {
-    font-size: 2vw;
+  .comment {
+    font-style: italic;
+    color: #888;
+    text-align: right;
+    font-size: 0.8vw;
   }
-  .sizehomeb {
-    font-size: 1vw;
+  .who-h1 {
+    font-size: 2.9vw;
+    color: #22ac00;
+    text-align: left;
   }
-  .sizehomes {
-    font-size: 1vw;
+  .who-h2 {
+    padding-left: 2vw;
+    font-size: 1.9vw;
+    color: rgb(65, 65, 65);
+    text-align: left;
   }
-  .sizehome3 {
-    font-size: 3vw;
+  .who-p {
+    font-size: 1.05vw;
+    text-align: left;
   }
-  .sizehomed {
+  .service-h1 {
+    font-size: 2.4vw;
+    color: #22ac00;
+    text-align: center;
+  }
+  .service-h2 {
+    padding-left: 2vw;
+    font-size: 1.9vw;
+    color: rgb(65, 65, 65);
+    text-align: center;
+  }
+  .service-p {
+    font-size: 1.05vw;
+    text-align: left;
+  }
+}
+
+@media (max-width: 1500px) {
+  .main-logo-size {
+    width: 70vw;
+    height: auto;
+  }
+  .comment {
+    font-style: italic;
+    color: #888;
+    text-align: right;
+    font-size: 1.2vw;
+  }
+  .who-h1 {
+    font-size: 3.2vw;
+    color: #22ac00;
+    text-align: left;
+  }
+  .who-h2 {
+    padding-left: 2vw;
+    font-size: 2.4vw;
+    color: rgb(65, 65, 65);
+    text-align: left;
+  }
+  .who-p {
     font-size: 1.6vw;
+    text-align: left;
+  }
+  .service-h1 {
+    font-size: 3vw;
+    color: #22ac00;
+    text-align: center;
+  }
+  .service-h2 {
+    padding-left: 2vw;
+    font-size: 2.3vw;
+    color: rgb(65, 65, 65);
+    text-align: center;
+  }
+  .service-p {
+    font-size: 1.6vw;
+    text-align: left;
   }
 }
 
-@media (max-width: 1000px) {
-  .sizehome {
-    font-size: 12vw;
+@media (max-width: 980px) {
+  .main-logo-size {
+    width: 80vw;
+    height: auto;
   }
-  .sizehomemb {
-    font-size: 7vw;
+  .comment {
+    font-style: italic;
+    color: #888;
+    text-align: right;
+    font-size: 3.7vw;
   }
-  .sizehomeq {
+  .who-h1 {
+    font-size: 8vw;
+    color: #22ac00;
+    text-align: left;
+  }
+  .who-h2 {
+    padding-left: 7vw;
     font-size: 5vw;
+    color: rgb(65, 65, 65);
+    text-align: left;
+    padding-left: 0 !important;
+    padding-top: 0 !important;
+    padding-bottom: 2vh !important;
+    border-bottom: 3px solid #22ac00;
   }
-  .sizehome2 {
-    font-size: 5vw;
-  }
-  .sizehomet {
-    font-size: 5vw;
-  }
-  .sizehomeb {
-    font-size: 5vw;
-  }
-  .sizehomes {
-    font-size: 3vw;
-  }
-  .sizehome3 {
+  .who-p {
     font-size: 4vw;
+    text-align: left;
+    padding-top: 3vh !important;
+    background-color: #f5f5f5;
   }
-  .sizehomed {
-    font-size: 6vw;
+  .service-h1 {
+    font-size: 8vw;
+    color: #22ac00;
+    text-align: center;
+    border-bottom: 3px solid #22ac00 !important;
+  }
+  .service-h2 {
+    padding-left: 2vw;
+    font-size: 4vw;
+    color: rgb(65, 65, 65);
+    text-align: center;
+  }
+  .service-p {
+    font-size: 4vw;
+    text-align: left;
+    background-color: #f5f5f5;
+    padding-bottom: 3vh;
   }
 }
- */

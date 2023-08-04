@@ -86,51 +86,52 @@ export const Navbar = () => {
 
   return (
     <div className="">
-      {currentPath === "/home" ? (
-        <nav
-          className={`navbar mynav navbar-expand-lg mx-auto navbar-scrolled col-12  ${
-            isInView ? " bg-gradient-1 py-5" : " bg-white-gradient shadowed "
-          }`}
-        >
-          <div className="container-fluid  col-11 ">
-            <Link
-              to="/home"
-              className={`container-logo-navbar mx-auto${
-                isDesktop ? " ms-5" : " ms-2"
-              } ${isInView ? " hided" : ""}`}
-              onClick={() => {
-                scrollToTop();
-              }}
-            >
-              <img src={logo} style={{ width: "5vw", height: "auto" }} />
-            </Link>
-            <div></div>
-            <button
-              className="navbar-toggler"
-              type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#navbarNavDropdown"
-              aria-controls="navbarNavDropdown"
-              aria-expanded="false"
-              aria-label="Toggle navigation"
-            >
-              <span className="navbar-toggler-icon"></span>
-            </button>
-            <div className=" collapse navbar-collapse" id="navbarNavDropdown">
-              <ul className={`navbar-nav ms-auto ${isInView ? " " : " "}`}>
-                <div className="nav-item ">
-                  <a
-                    href={`http://${store.citas}`}
-                    target="_blank"
-                    className={`nav-link mx-2 me-5 px-2 line center-text ${
-                      selected === 0 && ""
-                    } ${isInView ? " text-white" : "  text-black"}`}
-                    onClick={() => {}}
-                  >
-                    CITA PREVIA
-                  </a>
-                </div>
-                {/* <div className="nav-item">
+      <nav
+        className={`navbar mynav navbar-expand-lg mx-auto navbar-scrolled col-12  ${
+          isInView ? " bg-gradient-1 py-5" : " bg-white-gradient shadowed "
+        }`}
+      >
+        <div className="container-fluid col-11 ">
+          <Link
+            to="/home"
+            className={`container-logo-navbar mx-auto${
+              isDesktop ? " ms-5" : " ms-2"
+            } ${isInView ? " hided" : ""}`}
+            onClick={() => {
+              scrollToTop();
+            }}
+          >
+            <img src={logo} className="size-logo-nav" />
+          </Link>
+          <div></div>
+          <button
+            className={`navbar-toggler toggle-color ${
+              isInView ? " toggle-color-white" : " toggle-color-black"
+            }`}
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNavDropdown"
+            aria-controls="navbarNavDropdown"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <i class="fa-solid fa-bars"></i>
+          </button>
+          <div className=" collapse navbar-collapse " id="navbarNavDropdown">
+            <ul className={`navbar-nav ms-auto ${isInView ? " " : " "}`}>
+              <div className="nav-item ">
+                <a
+                  href={`http://${store.citas}`}
+                  target="_blank"
+                  className={`nav-link mx-2 me-5 px-2 line  ${
+                    selected === 0 && ""
+                  } ${isInView ? " text-white" : "  text-black"}`}
+                  onClick={() => {}}
+                >
+                  CITA PREVIA
+                </a>
+              </div>
+              {/* <div className="nav-item">
                   <Link
                     to="/vehiculos"
                     className={`nav-link  mx-2 me-5 line  px-2 ${
@@ -141,113 +142,32 @@ export const Navbar = () => {
                     BLOG
                   </Link>
                 </div> */}
-                <div className="nav-item">
-                  <Link
-                    to="/vehiculos"
-                    className={`nav-link mx-2 me-5 px-2 line  ${
-                      selected === 1 && ""
-                    } ${isInView ? " text-white" : "  text-black"}`}
-                    onClick={() => {}}
-                  >
-                    VEHICULOS OCASIÓN
-                  </Link>
-                </div>
-                <div className="nav-item">
-                  <Link
-                    to="/home"
-                    className={`nav-link  mx-2 me-5 px-2 line ${
-                      selected === 2 && ""
-                    } ${isInView ? " text-white" : "  text-black"}`}
-                    onClick={() => scrollToBottom()}
-                  >
-                    CONTACTO
-                  </Link>
-                </div>
-              </ul>
-            </div>
+              <div className="nav-item">
+                <Link
+                  to="/vehiculos"
+                  className={`nav-link mx-2 me-5 px-2 line  ${
+                    selected === 1 && ""
+                  } ${isInView ? " text-white" : "  text-black"}`}
+                  onClick={() => {}}
+                >
+                  VEHICULOS OCASIÓN
+                </Link>
+              </div>
+              <div className="nav-item">
+                <Link
+                  to="/home"
+                  className={`nav-link  mx-2 me-5 px-2 line ${
+                    selected === 2 && ""
+                  } ${isInView ? " text-white" : "  text-black"}`}
+                  onClick={() => scrollToBottom()}
+                >
+                  CONTACTO
+                </Link>
+              </div>
+            </ul>
           </div>
-        </nav>
-      ) : (
-        <nav
-          className={`navbar mynav navbar-expand-lg mx-auto navbar-scrolled col-12  ${
-            isInView ? " bg-gradient-1 py-5" : " bg-white-gradient shadowed "
-          }`}
-        >
-          <div className="container-fluid  col-11 ">
-            <Link
-              to="/home"
-              className={`container-logo-navbar mx-auto${
-                isDesktop ? " ms-5" : " ms-2"
-              } ${isInView ? " " : ""}`}
-              onClick={() => {
-                scrollToTop();
-              }}
-            >
-              <img src={logo} style={{ width: "8vw", height: "5vh" }} />
-            </Link>
-            <div></div>
-            <button
-              className="navbar-toggler"
-              type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#navbarNavDropdown"
-              aria-controls="navbarNavDropdown"
-              aria-expanded="false"
-              aria-label="Toggle navigation"
-            >
-              <span className="navbar-toggler-icon"></span>
-            </button>
-            <div className=" collapse navbar-collapse" id="navbarNavDropdown">
-              <ul className={`navbar-nav ms-auto ${isInView ? " " : " "}`}>
-                <div className="nav-item ">
-                  <Link
-                    to="/test"
-                    className={`nav-link mx-2 me-5 px-2 line center-text ${
-                      selected === 0 && ""
-                    } ${isInView ? " text-white" : "  text-black"}`}
-                    onClick={() => {}}
-                  >
-                    CITA PREVIA
-                  </Link>
-                </div>
-                <div className="nav-item">
-                  <Link
-                    to="/vehiculos"
-                    className={`nav-link  mx-2 me-5 line  px-2 ${
-                      selected === 6 && ""
-                    } ${isInView ? " text-white" : "  text-black"}`}
-                    onClick={() => {}}
-                  >
-                    BLOG
-                  </Link>
-                </div>
-                <div className="nav-item">
-                  <Link
-                    to="/vehiculos"
-                    className={`nav-link mx-2 me-5 px-2 line  ${
-                      selected === 1 && ""
-                    } ${isInView ? " text-white" : "  text-black"}`}
-                    onClick={() => {}}
-                  >
-                    VEHICULOS OCASIÓN
-                  </Link>
-                </div>
-                <div className="nav-item">
-                  <Link
-                    to="/home"
-                    className={`nav-link  mx-2 me-5 px-2 line ${
-                      selected === 2 && ""
-                    } ${isInView ? " text-white" : "  text-black"}`}
-                    onClick={() => scrollToBottom()}
-                  >
-                    CONTACTO
-                  </Link>
-                </div>
-              </ul>
-            </div>
-          </div>
-        </nav>
-      )}
+        </div>
+      </nav>
     </div>
   );
 };
