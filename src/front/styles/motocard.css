@@ -1,35 +1,133 @@
-.motocard-brand {
-  font-size: 1.1vw;
-  color: rgb(65, 65, 65);
-}
-.motocard-model {
-  color: #22ac00;
-  font-size: 1.7vw;
-  font-weight: bold;
-}
 .motocard-btn {
   border: 1px solid rgb(211, 211, 211);
   border-radius: 4px;
   background-color: rgb(211, 211, 211);
   color: black;
 }
-.motocard-description {
-  font-size: 0.9vw;
-  text-align: justify;
-  color: rgb(65, 65, 65);
-}
-.motocard-description-tittle {
-  font-size: 1.1vw;
-}
-.motocard-price {
-  font-size: 2vw;
-  font-weight: bold;
-}
 .motocard {
   box-shadow: -4px 4px 8px rgba(0, 0, 0, 0.2), 4px 4px 8px rgba(0, 0, 0, 0.2);
 }
 .sizeimgcarousel {
   min-height: 300px;
-
   max-height: 300px;
+}
+
+@media (min-width: 1500px) {
+  .motocard-brand {
+    font-size: 1.1vw;
+    color: rgb(65, 65, 65);
+  }
+  .motocard-model {
+    color: #22ac00;
+    font-size: 1.7vw;
+    font-weight: bold;
+  }
+  .motocard-description {
+    font-size: 0.9vw;
+    text-align: justify;
+    color: rgb(65, 65, 65);
+  }
+  .motocard-description-tittle {
+    font-size: 1.1vw;
+  }
+  .motocard-price {
+    font-size: 2vw;
+    font-weight: bold;
+  }
+  .motocard-btn {
+    border: 1px solid rgb(211, 211, 211);
+    border-radius: 4px;
+    background-color: rgb(211, 211, 211);
+    color: black;
+  }
+}
+
+@media (max-width: 1500px) {
+  .motocard-brand {
+    font-size: 1.5vw;
+    color: rgb(65, 65, 65);
+  }
+  .motocard-model {
+    color: #22ac00;
+    font-size: 2.7vw;
+    font-weight: bold;
+  }
+  .motocard-description {
+    font-size: 1.5vw;
+    text-align: justify;
+    color: rgb(65, 65, 65);
+  }
+  .motocard-description-tittle {
+    font-size: 1.6vw;
+  }
+  .motocard-price {
+    font-size: 2vw;
+    font-weight: bold;
+  }
+  .motocard-btn {
+    border: 1px solid rgb(211, 211, 211);
+    border-radius: 4px;
+    background-color: rgb(211, 211, 211);
+    color: black;
+  }
+}
+
+@media (max-width: 980px) {
+  .motocard-brand {
+    font-size: 3vw;
+    color: rgb(65, 65, 65);
+  }
+  .motocard-model {
+    color: #22ac00;
+    font-size: 3.7vw;
+    font-weight: bold;
+  }
+  .motocard-description {
+    font-size: 2.9vw;
+    text-align: justify;
+    color: rgb(65, 65, 65);
+  }
+  .motocard-description-tittle {
+    font-size: 3vw;
+  }
+  .motocard-price {
+    font-size: 3vw;
+    font-weight: bold;
+  }
+  .motocard-btn {
+    border: 1px solid rgb(211, 211, 211);
+    border-radius: 4px;
+    background-color: rgb(211, 211, 211);
+    color: black;
+  }
+}
+
+@media (max-width: 580px) {
+  .motocard-brand {
+    font-size: 5vw;
+    color: rgb(65, 65, 65);
+  }
+  .motocard-model {
+    color: #22ac00;
+    font-size: 6vw;
+    font-weight: bold;
+  }
+  .motocard-description {
+    font-size: 4.5vw;
+    text-align: justify;
+    color: rgb(65, 65, 65);
+  }
+  .motocard-description-tittle {
+    font-size: 5vw;
+  }
+  .motocard-price {
+    font-size: 5vw;
+    font-weight: bold;
+  }
+  .motocard-btn {
+    border: 1px solid rgb(211, 211, 211);
+    border-radius: 4px;
+    background-color: rgb(211, 211, 211);
+    color: black;
+  }
 }

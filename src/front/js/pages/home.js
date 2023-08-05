@@ -21,12 +21,20 @@ import { GoMail } from "react-icons/go";
 import "../../styles/services.css";
 import "../../styles/home.css";
 import "../../styles/rows.css";
+import "../../styles/animations.css";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 
 export const Home = () => {
   const { store, actions } = useContext(Context);
   const [isInViewH, setIsInViewH] = useState(false);
+  const [isInViewH2, setIsInViewH2] = useState(false);
+  const [isInViewH3, setIsInViewH3] = useState(false);
+  const [isInViewH4, setIsInViewH4] = useState(false);
+  const [isInViewH5, setIsInViewH5] = useState(false);
+  const [isInViewH6, setIsInViewH6] = useState(false);
+  const [isInViewH7, setIsInViewH7] = useState(false);
+  const [isInViewH8, setIsInViewH8] = useState(false);
   const isDesktop = window.innerWidth >= 1000;
   const startRef = useRef(null);
 
@@ -38,10 +46,20 @@ export const Home = () => {
 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
-    gsap.utils.toArray(".navbar-scrolled").forEach(function (elem) {
+    gsap.utils.toArray(".slide-in-element").forEach(function (elem) {
       ScrollTrigger.create({
         trigger: elem,
         start: "top 100%",
+        end: "bottom 0%",
+        onEnter: () => {
+          setIsInViewH2(true); // Establecer el estado en true cuando se cumple la condición
+        },
+      });
+    });
+    gsap.utils.toArray(".navbar-scrolled").forEach(function (elem) {
+      ScrollTrigger.create({
+        trigger: elem,
+        start: "top 50%",
         end: "bottom 0%",
         onEnter: () => {
           setIsInViewH(true); // Establecer el estado en true cuando se cumple la condición
@@ -54,6 +72,50 @@ export const Home = () => {
         },
         onLeaveBack: () => {
           setIsInViewH(false);
+        },
+      });
+    });
+    gsap.utils.toArray(".slide-in-comment").forEach(function (elem) {
+      ScrollTrigger.create({
+        trigger: elem,
+        start: "top 90%",
+        end: "bottom 0%",
+        onEnter: () => {
+          setIsInViewH3(true); // Establecer el estado en true cuando se cumple la condición
+        },
+      });
+    });
+    gsap.utils.toArray(".slide-in-cita").forEach(function (elem) {
+      ScrollTrigger.create({
+        trigger: elem,
+        start: "top 80%",
+        end: "bottom 0%",
+        onEnter: () => {
+          setIsInViewH4(true); // Establecer el estado en true cuando se cumple la condición
+        },
+      });
+    });
+    gsap.utils.toArray(".slide-in-services").forEach(function (elem) {
+      ScrollTrigger.create({
+        trigger: elem,
+        start: "top 80%",
+        end: "bottom 0%",
+        onEnter: () => {
+          setIsInViewH5(true); // Establecer el estado en true cuando se cumple la condición
+          setTimeout(() => {
+            setIsInViewH6(true);
+          }, 400);
+        },
+      });
+    });
+    gsap.utils.toArray(".slide-in-contact").forEach(function (elem) {
+      ScrollTrigger.create({
+        trigger: elem,
+        start: "top 80%",
+        end: "bottom 0%",
+        onEnter: () => {
+          setIsInViewH7(true);
+          setIsInViewH8(true);
         },
       });
     });
@@ -118,10 +180,17 @@ export const Home = () => {
           <div className=" mx-auto d-flex p-4 col-12 col-sm-12	col-md-12	col-lg-11	col-xl-10	col-xxl-9 row px-0">
             <div className="col-12 col-sm-12 col-md-12	col-lg-6	col-xl-6	col-xxl-5 d-flex flex-column">
               {" "}
-              <img src={cruzado} style={{ width: "100%", height: "" }} />
+              <img
+                src={cruzado}
+                style={{ width: "100%", height: "", zIndex: "90" }}
+              />
               <div className="col-12 text-black border-red-r pb-5 mt-5">
                 {" "}
-                <p className="comment col-10 ms-auto pe-4 pt-3 border-red-r-2">
+                <p
+                  className={`slide-in-comment comment col-10 ms-auto pe-4 pt-3 border-red-r-2 ${
+                    isInViewH3 ? "slide-in-top" : "hided"
+                  }`}
+                >
                   "Nuestra promesa es brindarte la tranquilidad de confiar en un
                   taller profesional y comprometido que cuidará de tu vehículo
                   con la seriedad e implicación que merece." <br></br>{" "}
@@ -131,7 +200,11 @@ export const Home = () => {
             </div>
             <div className="col-12 col-sm-12 col-md-12	col-lg-6	col-xl-6	col-xxl-7 d-flex flex-column p-4">
               <h1 className="col-12 who-h1 pt-5">¿Quiénes somos?</h1>
-              <h2 className="col-12 who-h2 pt-3 mb-0">
+              <h2
+                className={`slide-in-element col-12 who-h2 pt-3 mb-0 ${
+                  isInViewH2 ? "slide-in-left" : "hided"
+                }`}
+              >
                 ... no somos el típico taller oficial
               </h2>
               <p className="col-12 who-p px-3 pt-5 mb-0 text-wrap">
@@ -206,7 +279,9 @@ export const Home = () => {
                 <a
                   href={`http://${store.citas}`}
                   target="_blank"
-                  className=" col-12 services-cita-color services-cita-size my-link"
+                  className={`slide-in-cita col-12 services-cita-color services-cita-size my-link ${
+                    isInViewH4 ? "slide-in-bottom" : "hided"
+                  }`}
                 >
                   Pide cita con nosotros
                   <span className="ms-3">
@@ -219,8 +294,12 @@ export const Home = () => {
               <h2 className="col-12 service-h2 altura-tittle border-red-b pt-2"></h2>
               <div className="col-11 mx-auto">
                 {" "}
-                <div className=" row mx-auto services-img mt-4">
-                  <div class="flip-card mx-auto mt-5 col-10 col-sm-10 col-md-10	col-lg-5	col-xl-5	col-xxl-5">
+                <div className="slide-in-services row mx-auto services-img mt-4">
+                  <div
+                    className={` flip-card mx-auto mt-5 col-10 col-sm-10 col-md-10	col-lg-5	col-xl-5	col-xxl-5 ${
+                      isInViewH5 ? "slide-in-right" : "hided"
+                    }`}
+                  >
                     <div class="flip-card-inner col-12">
                       <div class="flip-card-front">
                         <img src={escape} className="icon-img mt-3" />
@@ -239,7 +318,11 @@ export const Home = () => {
                       </div>
                     </div>
                   </div>
-                  <div class="flip-card mx-auto mt-5 col-10 col-sm-10 col-md-10	col-lg-5	col-xl-5	col-xxl-5">
+                  <div
+                    className={` flip-card mx-auto mt-5 col-10 col-sm-10 col-md-10	col-lg-5	col-xl-5	col-xxl-5 ${
+                      isInViewH6 ? "slide-in-right" : "hided"
+                    }`}
+                  >
                     <div class="flip-card-inner col-12">
                       <div class="flip-card-front">
                         <img src={bujia} className="icon-img mt-3" />
@@ -259,7 +342,11 @@ export const Home = () => {
                       </div>
                     </div>
                   </div>
-                  <div class="flip-card mx-auto mt-5 col-10 col-sm-10 col-md-10	col-lg-5	col-xl-5	col-xxl-5">
+                  <div
+                    className={` flip-card mx-auto mt-5 col-10 col-sm-10 col-md-10	col-lg-5	col-xl-5	col-xxl-5 ${
+                      isInViewH5 ? "slide-in-right" : "hided"
+                    }`}
+                  >
                     <div class="flip-card-inner col-12">
                       <div class="flip-card-front">
                         <img src={sonido} className="icon-img mt-3" />
@@ -281,7 +368,11 @@ export const Home = () => {
                       </div>
                     </div>
                   </div>
-                  <div class="flip-card mx-auto mt-5 col-10 col-sm-10 col-md-10	col-lg-5	col-xl-5	col-xxl-5">
+                  <div
+                    className={` flip-card mx-auto mt-5 col-10 col-sm-10 col-md-10	col-lg-5	col-xl-5	col-xxl-5 ${
+                      isInViewH6 ? "slide-in-right" : "hided"
+                    }`}
+                  >
                     <div class="flip-card-inner col-12">
                       <div class="flip-card-front">
                         <img src={cadena} className="icon-img mt-3" />
@@ -300,7 +391,11 @@ export const Home = () => {
                       </div>
                     </div>
                   </div>
-                  <div class="flip-card mx-auto mt-5 col-10 col-sm-10 col-md-10	col-lg-5	col-xl-5	col-xxl-5">
+                  <div
+                    className={` flip-card mx-auto mt-5 col-10 col-sm-10 col-md-10	col-lg-5	col-xl-5	col-xxl-5 ${
+                      isInViewH5 ? "slide-in-right" : "hided"
+                    }`}
+                  >
                     <div class="flip-card-inner col-12">
                       <div class="flip-card-front">
                         <img src={aceite} className="icon-img mt-3" />
@@ -322,7 +417,11 @@ export const Home = () => {
                       </div>
                     </div>
                   </div>
-                  <div class="flip-card mx-auto my-5 col-10 col-sm-10 col-md-10	col-lg-5	col-xl-5	col-xxl-5">
+                  <div
+                    className={` flip-card mx-auto mt-5 col-10 col-sm-10 col-md-10	col-lg-5	col-xl-5	col-xxl-5 ${
+                      isInViewH6 ? "slide-in-right" : "hided"
+                    }`}
+                  >
                     <div class="flip-card-inner col-12">
                       <div class="flip-card-front">
                         <img src={freno} className="icon-img mt-3" />
@@ -347,10 +446,14 @@ export const Home = () => {
         </div>
         <div
           id="contact"
-          className="col-12 col-sm-12 col-md-12 col-lg-12	col-xl-12	col-xxl-9 row mx-auto margin-top-section3 "
+          className=" slide-in-contact col-12 col-sm-12 col-md-12 col-lg-12	col-xl-12	col-xxl-9 row mx-auto margin-top-section3 "
         >
           {" "}
-          <div className="col-12 col-sm-12 col-md-12	col-lg-6	col-xl-6	col-xxl-6 flex-column mt-6vh px-0">
+          <div
+            className={`col-12 col-sm-12 col-md-12	col-lg-6	col-xl-6	col-xxl-6 flex-column mt-6vh px-0 ${
+              isInViewH7 ? "scale-in-hor-right" : "hided"
+            }`}
+          >
             <h2 className="contact-h2 col-12 ms-auto pt-2 ps-5  pe-5 text-wrap">
               ¿Tienes alguna consulta o no encuentras el servicio que buscas?{" "}
               <br></br>
@@ -366,7 +469,11 @@ export const Home = () => {
               respecto a tu moto.
             </p>
           </div>
-          <div className="col-11 col-sm-11 col-md-11	col-lg-6	col-xl-6	col-xxl-6 d-flex border-red-l flex-column px-0  my-auto mx-auto">
+          <div
+            className={`col-11 col-sm-11 col-md-11	col-lg-6	col-xl-6	col-xxl-6 d-flex border-red-l flex-column px-0  my-auto mx-auto ${
+              isInViewH8 ? "scale-in-hor-left" : "hided"
+            }`}
+          >
             <h1 className="contact-h1 col-12  ps-5 mb-0 border-red-l-2">
               Contacto
             </h1>{" "}

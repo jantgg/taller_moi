@@ -56,7 +56,7 @@ const SliderBikes = ({ data, groupSize }) => {
             ></div>
             <div className="col-12 d-flex absolute marggin-btn">
               <button
-                className={` boton-i px-0 col-1 text-white ${
+                className={` boton-i px-0 col-1 ${
                   startIndex === 0 ? " opa0" : " opa1"
                 }`}
                 onClick={handlePrevClick}
@@ -66,7 +66,7 @@ const SliderBikes = ({ data, groupSize }) => {
               </button>
               <div className="col-10 px-0 text-white center-text"></div>
               <button
-                className={` boton-i col-1 px-0 text-white ${
+                className={` boton-i col-1 px-0 ${
                   endIndex >= data.length ? " opa0" : " opa1"
                 }`}
                 onClick={handleNextClick}

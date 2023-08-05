@@ -87,6 +87,7 @@ export const Navbar = () => {
   return (
     <div className="">
       <nav
+        style={{ zIndex: "99" }}
         className={`navbar mynav navbar-expand-lg mx-auto navbar-scrolled col-12  ${
           isInView ? " bg-gradient-1 py-5" : " bg-white-gradient shadowed "
         }`}
@@ -150,7 +151,7 @@ export const Navbar = () => {
                   } ${isInView ? " text-white" : "  text-black"}`}
                   onClick={() => {}}
                 >
-                  VEHICULOS OCASIÓN
+                  MOTOS DE OCASIÓN
                 </Link>
               </div>
               <div className="nav-item">

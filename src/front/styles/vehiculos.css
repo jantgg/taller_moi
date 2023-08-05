@@ -73,3 +73,70 @@ input[type="search"]:focus {
 .color-green {
   color: #22ac00;
 }
+#fondo-ocasion {
+  height: 45vh !important;
+}
+
+@media (min-width: 1500px) {
+  .veh-tittle {
+    font-size: 5.2vw;
+  }
+  #fondo-ocasion {
+    height: 45vh !important;
+  }
+}
+
+@media (max-width: 1200px) {
+  .veh-tittle {
+    font-size: 6.5vw;
+  }
+  #fondo-ocasion {
+    height: 45vh !important;
+  }
+  .botonaco {
+    font-size: 3.4vw;
+  }
+  .input-search {
+    font-size: 3.4vw;
+  }
+  .boton-search {
+    font-size: 3.3vw;
+  }
+}
+
+@media (max-width: 980px) {
+  .veh-tittle {
+    font-size: 7.2vw;
+  }
+  #fondo-ocasion {
+    height: 35vh !important;
+  }
+  .botonaco {
+    font-size: 4.3vw;
+  }
+  .input-search {
+    font-size: 4.3vw;
+  }
+  .boton-search {
+    font-size: 4vw;
+  }
+}
+
+@media (max-width: 580px) {
+  .veh-tittle {
+    font-size: 12.2vw;
+  }
+  #fondo-ocasion {
+    height: 30vh !important;
+    margin-top: 8vh;
+  }
+  .botonaco {
+    font-size: 5.4vw;
+  }
+  .input-search {
+    font-size: 5.4vw;
+  }
+  .boton-search {
+    font-size: 5vw;
+  }
+}

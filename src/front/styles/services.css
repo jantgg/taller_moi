@@ -16,6 +16,7 @@
 }
 
 .services-img {
+  padding-bottom: 4vh;
   content: ""; /* Asegura que el contenido del ::before esté presente */
   top: 0;
   left: 0;

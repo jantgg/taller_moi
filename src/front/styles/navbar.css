@@ -45,7 +45,7 @@
   bottom: 0px;
   left: 0px;
   transform: scaleX(0);
-  background: #22ac00;
+  background: #33ff00;
   transform-origin: bottom right;
   transition: transform 0.5s ease-out;
 }
