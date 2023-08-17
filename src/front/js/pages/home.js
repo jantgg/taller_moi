@@ -160,7 +160,7 @@ export const Home = () => {
       >
         <div className="col-3 text-white mx-auto my-auto center-text">
           {" "}
-          <div className={`container-logo ${isInViewH ? " " : "  hided"}`}>
+          <div className={`container-logo ${isInViewH ? " " : "  "}`}>
             <img src={logo} className="main-logo-size" />
           </div>
           <a class="container-arrow" onClick={scrollToStart}>
@@ -192,8 +192,8 @@ export const Home = () => {
                   }`}
                 >
                   "Nuestra promesa es brindarte la tranquilidad de confiar en un
-                  taller profesional y comprometido que cuidará de tu vehículo
-                  con la seriedad e implicación que merece." <br></br>{" "}
+                  taller que cuidará de tu vehículo con la seriedad e
+                  implicación que merece." <br></br>{" "}
                   <strong className="green-strong">- Moi Benitez</strong>
                 </p>
               </div>

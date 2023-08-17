@@ -1,10 +1,16 @@
 .mynav {
   position: fixed;
-  top: 0;
   z-index: 99;
   transition: padding 0.5s ease, background-color 0.5s ease;
-  width: 100vw;
 }
+.mynav2 {
+  width: 90%;
+  margin-left: 5%;
+  margin-right: 5%;
+  border-radius: 5px;
+  transition: opacity 0.7s ease;
+}
+
 .toggle-color-black {
   font-size: 5vw;
   color: black;
@@ -24,7 +30,7 @@
   width: 100% !important;
 }
 .shadowed {
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.6); /* Cambia los valores según tus preferencias */
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.6); /* Cambia los valores según tus preferencias */
 }
 
 .line {
@@ -68,7 +74,7 @@
   background-image: linear-gradient(to bottom, #000000, #fffde400);
 }
 .bg-white-gradient {
-  background-color: rgb(255, 255, 255);
+  background-color: rgb(247, 247, 247);
 }
 
 .navbar-dark .navbar-toggler {

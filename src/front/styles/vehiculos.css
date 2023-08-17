@@ -127,8 +127,8 @@ input[type="search"]:focus {
     font-size: 12.2vw;
   }
   #fondo-ocasion {
-    height: 30vh !important;
-    margin-top: 8vh;
+    height: 38vh !important;
+    padding-top: 8vh;
   }
   .botonaco {
     font-size: 5.4vw;
